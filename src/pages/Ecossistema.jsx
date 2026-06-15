@@ -76,8 +76,8 @@ export default function Ecossistema() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT — copy */}
-            <div>
+            {/* LEFT — copy (order-2 on mobile) */}
+            <div className="order-2 lg:order-1">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Ecossistema</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4">
                 Pessoas reais criando <span className="gradient-text">soluções com IA.</span>
@@ -90,12 +90,12 @@ export default function Ecossistema() {
               </motion.div>
             </div>
 
-            {/* RIGHT — illustration */}
+            {/* RIGHT — illustration (order-1 on mobile = aparece primeiro) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center h-[480px]"
+              className="order-1 lg:order-2 flex items-center justify-center h-[320px] lg:h-[480px]"
             >
               <EcossistemaIllustration />
             </motion.div>
