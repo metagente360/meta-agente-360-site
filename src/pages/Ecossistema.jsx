@@ -69,7 +69,7 @@ export default function Ecossistema() {
   return (
     <main>
       {/* HERO */}
-      <section className="min-h-[100svh] flex items-center bg-brand-ice bg-blueprint-grid pt-16 overflow-hidden relative">
+      <section className="min-h-[100svh] flex items-center bg-brand-ice bg-blueprint-grid pt-16 relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-brand-purple/5 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-brand-blue/5 rounded-full blur-[100px]" />
@@ -95,7 +95,7 @@ export default function Ecossistema() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center h-[480px] relative"
+              className="hidden lg:flex items-center justify-center h-[480px]"
             >
               <EcossistemaIllustration />
             </motion.div>
