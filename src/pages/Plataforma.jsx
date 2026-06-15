@@ -42,7 +42,7 @@ export default function Plataforma() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="relative z-20 order-2 lg:order-1">
+            <div className="relative z-20 order-1 lg:order-1">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Plataforma</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4">
                 A plataforma para criar, publicar e gerenciar agentes de IA com contexto.
@@ -58,7 +58,7 @@ export default function Plataforma() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="order-1 lg:order-2 flex items-center justify-end relative">
+              className="order-2 lg:order-2 flex items-center justify-end relative">
               
               {/* Sombra neon azul atrás */}
               <div className="absolute inset-0 rounded-2xl blur-3xl opacity-25 bg-brand-blue pointer-events-none" />
