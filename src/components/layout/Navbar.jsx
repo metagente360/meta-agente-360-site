@@ -41,13 +41,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" fill="white" />
-              </div>
-              <span className="font-heading font-700 text-navy text-sm tracking-tight">
-                Meta Agente <span className="text-brand-blue">360</span>
-              </span>
+            <Link to="/" className="flex items-center flex-shrink-0">
+              <img
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/515fa1360_logohorizontal-black.png"
+                alt="Meta Agente 360"
+                className="h-8 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop nav */}

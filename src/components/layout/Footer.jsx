@@ -45,13 +45,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" fill="white" />
-              </div>
-              <span className="font-heading font-bold text-white text-sm tracking-tight">
-                Meta Agente <span className="text-brand-blue">360</span>
-              </span>
+            <Link to="/" className="flex items-center mb-4">
+              <img
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/515fa1360_logohorizontal-black.png"
+                alt="Meta Agente 360"
+                className="h-8 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Plataforma brasileira para criar, publicar, gerenciar e escalar agentes de inteligência artificial personalizados.
