@@ -174,16 +174,15 @@ export default function Home() {
               </motion.p>
             </div>
 
-            {/* Right — mockup */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              style={{ y: mockupY }}
-              className="relative hidden lg:block"
-            >
-              <DashboardMockup />
-            </motion.div>
+            {/* Right — hero image */}
+            <div className="hidden lg:flex items-center justify-center">
+              <img
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/f6e19b230_imghero-home.png"
+                alt="Meta Agente 360"
+                className="w-full max-w-xl h-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+            </div>
           </div>
         </div>
       </section>
