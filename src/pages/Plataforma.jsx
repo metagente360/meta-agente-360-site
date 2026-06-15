@@ -41,8 +41,8 @@ export default function Plataforma() {
           <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-brand-blue/5 rounded-full blur-[100px]" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="relative flex items-center">
-            <div className="max-w-xl relative z-20">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative z-20">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Plataforma</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4">
                 A plataforma para criar, publicar e gerenciar agentes de IA com contexto.
@@ -58,14 +58,14 @@ export default function Plataforma() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:absolute lg:block lg:right-[-80px] lg:top-1/2 lg:-translate-y-1/2"
+              className="hidden lg:flex items-center justify-end relative"
             >
               {/* Sombra neon azul atrás */}
-              <div className="absolute inset-0 rounded-2xl blur-3xl opacity-30 bg-brand-blue pointer-events-none" style={{ transform: 'scale(0.85)' }} />
+              <div className="absolute inset-0 rounded-2xl blur-3xl opacity-25 bg-brand-blue pointer-events-none" />
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/ce88deb71_dashboard.png"
                 alt="Plataforma Meta Agente 360"
-                className="relative z-10 w-[860px] max-w-none object-contain"
+                className="relative z-10 w-full max-w-[720px] object-contain translate-x-12"
                 style={{ mixBlendMode: 'multiply' }}
               />
             </motion.div>
