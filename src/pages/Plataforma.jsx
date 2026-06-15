@@ -88,9 +88,9 @@ export default function Plataforma() {
             </div>
             {/* Right — texto e passo a passo */}
             <div>
-              <SectionHeader eyebrow="Visão geral" headline="Tudo que um agente precisa para sair da ideia e chegar ao uso real." body="Criar um agente não é apenas escrever um prompt. É definir missão, contexto, canais, dados, uso, análise e evolução. O Meta Agente organiza essa jornada em uma plataforma visual." />
+              <SectionHeader eyebrow="Visão geral" headline="Tudo que um agente precisa para sair da ideia e chegar ao uso real." body="Criar um agente começa pela sua essência. Defina sua identidade, persona, protocolo, regras e formato — e então publique com propósito e método." />
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
-                {['Missão', 'Contexto', 'Canais', 'Dados', 'Análise', 'Evolução'].map((step, i) =>
+                {['Identidade', 'Persona', 'Protocolo', 'Regras', 'Formato', 'Criar'].map((step, i) =>
                 <GlassCard key={i} delay={i * 0.07} className="p-4 text-center" hover={false}>
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center mx-auto mb-3">
                       <span className="text-xs font-bold text-brand-blue">{i + 1}</span>
