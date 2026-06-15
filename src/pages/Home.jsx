@@ -179,7 +179,7 @@ export default function Home() {
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/f6e19b230_imghero-home.png"
                 alt="Meta Agente 360"
-                className="w-full max-w-sm lg:max-w-xl h-auto object-contain"
+                className="w-full max-w-[260px] lg:max-w-md h-auto object-contain"
                 style={{ mixBlendMode: 'multiply' }}
               />
             </div>
