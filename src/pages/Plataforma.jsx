@@ -62,12 +62,10 @@ export default function Plataforma() {
             >
               {/* Sombra neon azul atrás */}
               <div className="absolute inset-0 rounded-2xl blur-3xl opacity-25 bg-brand-blue pointer-events-none" />
-              {/* Fade esquerda para não colidir com texto */}
-              <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-brand-ice to-transparent z-20 pointer-events-none" />
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/ce88deb71_dashboard.png"
                 alt="Plataforma Meta Agente 360"
-                className="relative z-10 w-full max-w-none object-contain scale-110 translate-x-8"
+                className="relative z-10 w-full max-w-[720px] object-contain translate-x-12"
                 style={{ mixBlendMode: 'multiply' }}
               />
             </motion.div>
