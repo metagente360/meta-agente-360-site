@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, BookOpen, Zap, Globe, MessageCircle, Monitor, ExternalLink } from 'lucide-react';
+import { Users, BookOpen, Zap, Globe, MessageCircle, ExternalLink } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -63,26 +63,6 @@ const community = [
   { icon: Globe, label: 'Ecossistema aberto', desc: 'Qualquer especialista pode se tornar um Meta Produtor e criar soluções escaláveis.' },
 ];
 
-const channels = [
-  {
-    icon: MessageCircle,
-    label: 'WhatsApp',
-    desc: 'Interaja com o agente direto pelo WhatsApp — sem instalar nada, no canal que você já usa.',
-    color: 'from-green-500/10 to-green-500/5',
-    iconColor: 'text-green-600',
-    badge: 'bg-green-100 text-green-700',
-    badgeLabel: 'Canal disponível',
-  },
-  {
-    icon: Monitor,
-    label: 'Web App',
-    desc: 'Acesse a plataforma pelo navegador com interface completa, histórico e painel de controle.',
-    color: 'from-brand-blue/10 to-brand-blue/5',
-    iconColor: 'text-brand-blue',
-    badge: 'bg-brand-lavender text-brand-purple',
-    badgeLabel: 'Canal disponível',
-  },
-];
 
 export default function Ecossistema() {
   return (
@@ -105,37 +85,6 @@ export default function Ecossistema() {
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.35 }}>
               <GradientButton to="/contato" size="lg">Fazer parte do Ecossistema</GradientButton>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CANAIS DE ACESSO */}
-      <section className="py-16 bg-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Canais de acesso"
-            headline="Use o agente onde preferir."
-            body="Os agentes do ecossistema estão disponíveis via WhatsApp ou Web App — sem fricção, na plataforma que faz sentido pra você."
-            align="center"
-            dark
-            className="max-w-xl mx-auto mb-10 text-center"
-          />
-          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
-            {channels.map((ch, i) => (
-              <GlassCard key={i} delay={i * 0.1} dark className="p-7 overflow-hidden relative">
-                <div className={`absolute inset-0 bg-gradient-to-br ${ch.color} opacity-30 rounded-2xl`} />
-                <div className="relative z-10">
-                  <div className={`w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4`}>
-                    <ch.icon className={`w-5 h-5 ${ch.iconColor}`} strokeWidth={1.5} />
-                  </div>
-                  <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 ${ch.badge}`}>
-                    {ch.badgeLabel}
-                  </span>
-                  <h3 className="font-heading text-lg font-semibold text-white mb-2">{ch.label}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{ch.desc}</p>
-                </div>
-              </GlassCard>
-            ))}
           </div>
         </div>
       </section>

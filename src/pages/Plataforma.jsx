@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe } from 'lucide-react';
+import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe, MessageCircle } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SecondaryButton from '../components/ui/SecondaryButton';
@@ -122,6 +122,56 @@ export default function Plataforma() {
               <p className="text-sm font-semibold text-navy">{c}</p>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* ONDE ATIVAR SEU AGENTE */}
+      <section className="py-16 bg-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Ativação do Agente"
+            headline="Use o agente onde preferir."
+            body="Depois de criar, seu agente pode ser ativado via WhatsApp ou Web App — sem fricção, no canal que faz mais sentido para o seu público."
+            align="center"
+            dark
+            className="max-w-xl mx-auto mb-10 text-center"
+          />
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            {[
+              {
+                icon: MessageCircle,
+                label: 'WhatsApp',
+                desc: 'Interaja com o agente direto pelo WhatsApp — sem instalar nada, no canal que seu público já usa.',
+                color: 'from-green-500/10 to-green-500/5',
+                iconColor: 'text-green-500',
+                badge: 'bg-green-500/20 text-green-400',
+                badgeLabel: 'Canal disponível',
+              },
+              {
+                icon: Globe,
+                label: 'Web App',
+                desc: 'Acesse a plataforma pelo navegador com interface completa, histórico e painel de controle.',
+                color: 'from-brand-blue/10 to-brand-blue/5',
+                iconColor: 'text-brand-blue',
+                badge: 'bg-brand-blue/20 text-brand-blue',
+                badgeLabel: 'Canal disponível',
+              },
+            ].map((ch, i) => (
+              <GlassCard key={i} delay={i * 0.1} dark className="p-7 overflow-hidden relative">
+                <div className={`absolute inset-0 bg-gradient-to-br ${ch.color} opacity-30 rounded-2xl`} />
+                <div className="relative z-10">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                    <ch.icon className={`w-5 h-5 ${ch.iconColor}`} strokeWidth={1.5} />
+                  </div>
+                  <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 ${ch.badge}`}>
+                    {ch.badgeLabel}
+                  </span>
+                  <h3 className="font-heading text-lg font-semibold text-white mb-2">{ch.label}</h3>
+                  <p className="text-sm text-white/55 leading-relaxed">{ch.desc}</p>
+                </div>
+              </GlassCard>
+            ))}
+          </div>
         </div>
       </section>
 
