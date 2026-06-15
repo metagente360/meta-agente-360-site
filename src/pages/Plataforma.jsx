@@ -65,7 +65,7 @@ export default function Plataforma() {
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/ce88deb71_dashboard.png"
                 alt="Plataforma Meta Agente 360"
-                className="relative z-10 w-full max-w-none object-contain translate-x-16 scale-110"
+                className="relative z-10 w-full max-w-none object-contain translate-x-16 scale-150"
                 style={{ mixBlendMode: 'multiply' }}
               />
             </motion.div>
