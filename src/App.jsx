@@ -6,43 +6,69 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
-// Add page imports here
+
+// Layout
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+
+// Pages
+import Home from './pages/Home';
+import Plataforma from './pages/Plataforma';
+import Formacao from './pages/Formacao';
+import MetaProdutor from './pages/MetaProdutor';
+import MetaEmpresa from './pages/MetaEmpresa';
+import Solucoes from './pages/Solucoes';
+import Jornada from './pages/Jornada';
+import Ecossistema from './pages/Ecossistema';
+import Cases from './pages/Cases';
+import Sobre from './pages/Sobre';
+import Contato from './pages/Contato';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
 
-  // Show loading spinner while checking app public settings or auth
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
+      <div className="fixed inset-0 flex items-center justify-center bg-brand-ice">
+        <div className="w-7 h-7 border-[3px] border-brand-grey border-t-brand-blue rounded-full animate-spin" />
       </div>
     );
   }
 
-  // Handle authentication errors
   if (authError) {
     if (authError.type === 'user_not_registered') {
       return <UserNotRegisteredError />;
     } else if (authError.type === 'auth_required') {
-      // Redirect to login automatically
       navigateToLogin();
       return null;
     }
   }
 
-  // Render the main app
   return (
-    <Routes>
-      {/* Add your page Route elements here */}
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <div className="min-h-screen flex flex-col bg-brand-ice">
+      <Navbar />
+      <div className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/plataforma" element={<Plataforma />} />
+          <Route path="/formacao-arquiteto-ia-agentica" element={<Formacao />} />
+          <Route path="/meta-produtor" element={<MetaProdutor />} />
+          <Route path="/meta-empresa" element={<MetaEmpresa />} />
+          <Route path="/solucoes-agenticas" element={<Solucoes />} />
+          <Route path="/jornada-agentica" element={<Jornada />} />
+          <Route path="/ecossistema" element={<Ecossistema />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
   );
 };
 
-
 function App() {
-
   return (
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>

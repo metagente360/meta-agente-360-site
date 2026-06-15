@@ -1,0 +1,43 @@
+{
+  "name": "ContactLead",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome completo do lead"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "E-mail do lead"
+    },
+    "whatsapp": {
+      "type": "string",
+      "description": "N\u00famero de WhatsApp do lead"
+    },
+    "perfil_interesse": {
+      "type": "string",
+      "enum": [
+        "formacao",
+        "empresa",
+        "produtor",
+        "ecossistema",
+        "outro"
+      ],
+      "description": "Perfil de interesse do lead"
+    },
+    "mensagem": {
+      "type": "string",
+      "description": "Mensagem enviada pelo lead"
+    },
+    "origem": {
+      "type": "string",
+      "description": "P\u00e1gina de origem do contato"
+    }
+  },
+  "required": [
+    "nome",
+    "email",
+    "perfil_interesse"
+  ]
+}
