@@ -1,162 +1,148 @@
 import { motion } from 'framer-motion';
-import { Users, Zap, Globe, BookOpen, MessageCircle, Brain, Network, Star } from 'lucide-react';
+import { Brain, Users, BookOpen, Globe, Zap, MessageCircle } from 'lucide-react';
 
-const nodes = [
-  { id: 'center', icon: Brain, label: 'Meta Agente', x: 50, y: 50, size: 'lg', color: 'from-brand-blue to-brand-purple', delay: 0 },
-  { id: 'saude', icon: Star, label: 'Saúde', x: 20, y: 22, size: 'md', color: 'from-emerald-400 to-emerald-600', delay: 0.15 },
-  { id: 'edu', icon: BookOpen, label: 'Educação', x: 78, y: 18, size: 'md', color: 'from-violet-400 to-violet-600', delay: 0.2 },
-  { id: 'global', icon: Globe, label: 'Mercado', x: 82, y: 68, size: 'md', color: 'from-cyan-400 to-cyan-600', delay: 0.25 },
-  { id: 'comm', icon: MessageCircle, label: 'Comunidade', x: 15, y: 72, size: 'md', color: 'from-pink-400 to-rose-500', delay: 0.3 },
-  { id: 'net', icon: Network, label: 'Agentes', x: 50, y: 14, size: 'sm', color: 'from-orange-400 to-amber-500', delay: 0.35 },
-  { id: 'users', icon: Users, label: 'Produtores', x: 85, y: 42, size: 'sm', color: 'from-brand-blue to-indigo-500', delay: 0.4 },
-  { id: 'zap', icon: Zap, label: 'Automação', x: 12, y: 46, size: 'sm', color: 'from-yellow-400 to-orange-400', delay: 0.45 },
+const satellites = [
+  { icon: Users,          label: 'Meta Produtores', sub: 'Especialistas ativos',  color: '#216BFF', angle: -90  },
+  { icon: BookOpen,       label: 'Formação',         sub: 'Arquiteto de IA',       color: '#8A3FFC', angle: -30  },
+  { icon: Globe,          label: 'Mercado',           sub: 'Soluções escaláveis',   color: '#06b6d4', angle:  30  },
+  { icon: MessageCircle,  label: 'Comunidade',        sub: 'Troca e oportunidade',  color: '#10b981', angle:  90  },
+  { icon: Zap,            label: 'Automação',         sub: 'Agentes inteligentes',  color: '#f59e0b', angle: 150  },
+  { icon: Brain,          label: 'Plataforma',        sub: 'Orquestração central',  color: '#ec4899', angle: 210  },
 ];
 
-const connections = [
-  ['center', 'saude'],
-  ['center', 'edu'],
-  ['center', 'global'],
-  ['center', 'comm'],
-  ['center', 'net'],
-  ['center', 'users'],
-  ['center', 'zap'],
-  ['saude', 'comm'],
-  ['edu', 'net'],
-  ['global', 'users'],
-];
+const R = 138; // radius of orbit (SVG units, viewBox 400×400, center 200,200)
 
-function getNode(id) {
-  return nodes.find((n) => n.id === id);
+function toXY(angleDeg, r) {
+  const rad = (angleDeg * Math.PI) / 180;
+  return { x: 200 + r * Math.cos(rad), y: 200 + r * Math.sin(rad) };
 }
-
-const sizeMap = {
-  lg: { outer: 72, inner: 40, icon: 20, label: true },
-  md: { outer: 56, inner: 32, icon: 16, label: true },
-  sm: { outer: 44, inner: 26, icon: 14, label: false },
-};
 
 export default function EcossistemaIllustration() {
   return (
-    <div className="relative w-full h-full select-none" style={{ minHeight: 420 }}>
-      {/* Glow background orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-brand-purple/10 rounded-full blur-2xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-32 h-32 bg-emerald-400/8 rounded-full blur-2xl" />
-      </div>
+    <div className="relative w-full flex items-center justify-center">
+      <div className="relative w-full max-w-[480px] aspect-square">
 
-      {/* SVG connections */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {connections.map(([a, b], i) => {
-          const nodeA = getNode(a);
-          const nodeB = getNode(b);
-          return (
-            <motion.line
-              key={i}
-              x1={`${nodeA.x}%`} y1={`${nodeA.y}%`}
-              x2={`${nodeB.x}%`} y2={`${nodeB.y}%`}
-              stroke="url(#lineGrad)"
-              strokeWidth="0.4"
-              strokeOpacity="0.35"
-              strokeDasharray="1.5 1"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.5 + i * 0.06, ease: 'easeOut' }}
-            />
-          );
-        })}
-        <defs>
-          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#216BFF" />
-            <stop offset="100%" stopColor="#8A3FFC" />
-          </linearGradient>
-        </defs>
-      </svg>
+        {/* Background glow orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-brand-blue/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-brand-purple/10 rounded-full blur-2xl" />
+        </div>
 
-      {/* Nodes */}
-      {nodes.map((node) => {
-        const s = sizeMap[node.size];
-        const Icon = node.icon;
-        const isCenter = node.id === 'center';
+        {/* SVG layer: orbit ring + connection lines */}
+        <svg
+          viewBox="0 0 400 400"
+          className="absolute inset-0 w-full h-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="orbitGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#216BFF" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="#8A3FFC" stopOpacity="0.10" />
+            </linearGradient>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#216BFF" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#8A3FFC" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
 
-        return (
-          <motion.div
-            key={node.id}
-            className="absolute"
+          {/* Orbit ring */}
+          <circle cx="200" cy="200" r={R} stroke="url(#orbitGrad)" strokeWidth="1" strokeDasharray="4 6" />
+
+          {/* Connection lines from center to each node */}
+          {satellites.map((s, i) => {
+            const pos = toXY(s.angle, R);
+            return (
+              <motion.line
+                key={i}
+                x1="200" y1="200"
+                x2={pos.x} y2={pos.y}
+                stroke="url(#lineGrad)"
+                strokeWidth="1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+              />
+            );
+          })}
+        </svg>
+
+        {/* Center node */}
+        <motion.div
+          className="absolute"
+          style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)', zIndex: 10 }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div
+            className="w-20 h-20 rounded-2xl flex flex-col items-center justify-center gap-1"
             style={{
-              left: `${node.x}%`,
-              top: `${node.y}%`,
-              transform: 'translate(-50%, -50%)',
-              zIndex: isCenter ? 10 : 5,
+              background: 'linear-gradient(135deg, rgba(33,107,255,0.15) 0%, rgba(138,63,252,0.12) 100%)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1.5px solid rgba(255,255,255,0.35)',
+              boxShadow: '0 8px 32px rgba(33,107,255,0.18), inset 0 1px 0 rgba(255,255,255,0.3)',
             }}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: node.delay, ease: [0.22, 1, 0.36, 1] }}
           >
-            <motion.div
-              animate={isCenter
-                ? { scale: [1, 1.04, 1], boxShadow: ['0 0 24px rgba(33,107,255,0.3)', '0 0 40px rgba(33,107,255,0.5)', '0 0 24px rgba(33,107,255,0.3)'] }
-                : { y: [0, -4, 0] }
-              }
-              transition={{ duration: isCenter ? 3 : 4 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut', delay: node.delay + 0.5 }}
-              className="relative flex flex-col items-center"
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center"
+              style={{ background: 'linear-gradient(135deg, #216BFF, #8A3FFC)' }}
             >
-              {/* Outer ring */}
+              <Brain className="w-5 h-5 text-white" strokeWidth={1.8} />
+            </div>
+            <span className="text-[9px] font-bold text-navy/70 tracking-wide">META 360</span>
+          </div>
+        </motion.div>
+
+        {/* Satellite nodes */}
+        {satellites.map((sat, i) => {
+          const pos = toXY(sat.angle, R);
+          const Icon = sat.icon;
+          // Convert SVG coords (0-400) to percentage
+          const leftPct = (pos.x / 400) * 100;
+          const topPct  = (pos.y / 400) * 100;
+
+          return (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${leftPct}%`,
+                top: `${topPct}%`,
+                transform: 'translate(-50%, -50%)',
+                zIndex: 5,
+              }}
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div
-                className="relative rounded-2xl flex items-center justify-center"
+                className="flex flex-col items-center gap-1.5 p-3 rounded-2xl min-w-[88px]"
                 style={{
-                  width: s.outer,
-                  height: s.outer,
-                  background: 'rgba(255,255,255,0.12)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255,255,255,0.25)',
-                  boxShadow: '0 4px 24px rgba(5,10,36,0.1), inset 0 1px 0 rgba(255,255,255,0.2)',
+                  background: 'rgba(255,255,255,0.70)',
+                  backdropFilter: 'blur(18px)',
+                  WebkitBackdropFilter: 'blur(18px)',
+                  border: '1px solid rgba(255,255,255,0.55)',
+                  boxShadow: '0 4px 20px rgba(5,10,36,0.07), inset 0 1px 0 rgba(255,255,255,0.6)',
                 }}
               >
-                {/* Inner gradient circle */}
                 <div
-                  className={`bg-gradient-to-br ${node.color} rounded-xl flex items-center justify-center`}
-                  style={{ width: s.inner, height: s.inner }}
+                  className="w-8 h-8 rounded-xl flex items-center justify-center"
+                  style={{ background: `${sat.color}18`, border: `1px solid ${sat.color}30` }}
                 >
-                  <Icon strokeWidth={1.8} color="white" style={{ width: s.icon, height: s.icon }} />
+                  <Icon className="w-4 h-4" style={{ color: sat.color }} strokeWidth={1.8} />
+                </div>
+                <div className="text-center">
+                  <p className="text-[10px] font-bold text-navy leading-tight">{sat.label}</p>
+                  <p className="text-[8.5px] text-navy/45 leading-tight mt-0.5">{sat.sub}</p>
                 </div>
               </div>
-
-              {/* Label */}
-              {s.label && (
-                <div
-                  className="mt-1.5 px-2 py-0.5 rounded-lg text-[10px] font-semibold text-navy/80 whitespace-nowrap"
-                  style={{
-                    background: 'rgba(255,255,255,0.65)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,0.5)',
-                    fontSize: isCenter ? 11 : 9,
-                  }}
-                >
-                  {node.label}
-                </div>
-              )}
             </motion.div>
-          </motion.div>
-        );
-      })}
+          );
+        })}
 
-      {/* Floating particles */}
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={`p-${i}`}
-          className="absolute rounded-full bg-brand-blue/25"
-          style={{
-            width: 3 + (i % 3),
-            height: 3 + (i % 3),
-            left: `${15 + i * 13}%`,
-            top: `${20 + (i % 4) * 18}%`,
-          }}
-          animate={{ y: [0, -10, 0], opacity: [0.3, 0.8, 0.3] }}
-          transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 }}
-        />
-      ))}
+      </div>
     </div>
   );
 }
