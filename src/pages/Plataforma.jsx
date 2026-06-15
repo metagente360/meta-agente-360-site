@@ -61,9 +61,9 @@ export default function Plataforma() {
               className="hidden lg:block relative"
             >
               <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/58e9703ae_ChatGPTImage15dejunde202617_30_57.png"
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/ce88deb71_dashboard.png"
                 alt="Plataforma Meta Agente 360"
-                className="w-full max-w-[620px] object-contain relative z-10"
+                className="w-full max-w-[780px] object-contain relative z-10"
                 style={{ mixBlendMode: 'multiply' }}
               />
               {/* Fade esquerda para não colidir com texto */}
