@@ -79,11 +79,11 @@ export default function Plataforma() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left — imagem da plataforma */}
             <div className="flex items-center justify-center">
-              <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/92b0496ab_ChatGPTImage15dejunde202618_41_10.png"
-                alt="Plataforma Meta Agente 360"
-                className="w-full max-w-xl h-auto object-contain"
-                style={{ mixBlendMode: 'multiply' }} />
+              <img src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/7ccc30ddc_ChatGPT_Image_15_de_jun_de_2026__18_45_21.png"
+
+              alt="Plataforma Meta Agente 360"
+              className="w-full max-w-xl h-auto object-contain"
+              style={{ mixBlendMode: 'multiply' }} />
               
             </div>
             {/* Right — texto e passo a passo */}
