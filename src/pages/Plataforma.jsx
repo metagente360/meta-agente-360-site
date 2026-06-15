@@ -54,8 +54,24 @@ export default function Plataforma() {
                 <GradientButton to="/contato" size="lg">Falar com Especialista</GradientButton>
               </motion.div>
             </div>
-            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }} className="hidden lg:block">
-              <DashboardMockup />
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:block relative"
+            >
+              <img
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/58e9703ae_ChatGPTImage15dejunde202617_30_57.png"
+                alt="Plataforma Meta Agente 360"
+                className="w-full max-w-[620px] object-contain relative z-10"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+              {/* Fade esquerda para não colidir com texto */}
+              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand-ice to-transparent z-20 pointer-events-none" />
+              {/* Fade top */}
+              <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-brand-ice to-transparent z-20 pointer-events-none" />
+              {/* Fade bottom */}
+              <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-brand-ice to-transparent z-20 pointer-events-none" />
             </motion.div>
           </div>
         </div>
