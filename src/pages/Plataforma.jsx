@@ -25,7 +25,7 @@ const appTabs = [
 
 const studioModes = [
 { title: 'Iniciar do zero', desc: 'Defina missão, contexto, comportamento e canais manualmente.' },
-{ title: 'Enviar POP-A', desc: "Envie um Procedimento Operacional e Padr\xE3o do Agente pronto." },
+{ title: 'Enviar POP-A', desc: "Envie um Procedimento Operacional e Padr\xE3o Ag\xEAntico." },
 { title: 'Colar Prompt', desc: 'Cole um prompt existente e a plataforma estrutura automaticamente.' },
 { title: 'Descrição Livre', desc: 'Descreva o que você precisa e a IA transforma em configuração.' }];
 
