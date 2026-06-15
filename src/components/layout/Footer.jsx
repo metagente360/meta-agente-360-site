@@ -47,9 +47,9 @@ export default function Footer() {
           <div className="col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/515fa1360_logohorizontal-black.png"
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/40e20442e_logohorizontalwhite.png"
                 alt="Meta Agente 360"
-                className="h-8 w-auto object-contain brightness-0 invert"
+                className="h-8 w-auto object-contain"
               />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
