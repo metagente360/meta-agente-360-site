@@ -123,8 +123,8 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left — copy (order-2 on mobile, order-1 on lg) */}
-            <div className="order-2 lg:order-1">
+            {/* Left — copy */}
+            <div className="order-1 lg:order-1">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -174,8 +174,8 @@ export default function Home() {
               </motion.p>
             </div>
 
-            {/* Right — hero image (order-1 on mobile, order-2 on lg) */}
-            <div className="order-1 lg:order-2 flex items-center justify-center">
+            {/* Right — hero image */}
+            <div className="order-2 lg:order-2 flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/f6e19b230_imghero-home.png"
                 alt="Meta Agente 360"
