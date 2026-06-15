@@ -6,7 +6,7 @@ const footerLinks = {
     { label: 'Plataforma', href: '/plataforma' },
     { label: 'Jornada Agêntica', href: '/jornada-agentica' },
     { label: 'Soluções Agênticas', href: '/solucoes-agenticas' },
-    { label: 'Cases', href: '/cases' },
+    { label: 'Blog', href: '/blog' },
   ],
   Formação: [
     { label: 'Arquiteto de IA Agêntica', href: '/formacao-arquiteto-ia-agentica' },

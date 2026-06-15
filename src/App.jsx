@@ -20,7 +20,7 @@ import MetaEmpresa from './pages/MetaEmpresa';
 import Solucoes from './pages/Solucoes';
 import Jornada from './pages/Jornada';
 import Ecossistema from './pages/Ecossistema';
-import Cases from './pages/Cases';
+import Blog from './pages/Blog';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 
@@ -57,7 +57,7 @@ const AuthenticatedApp = () => {
           <Route path="/solucoes-agenticas" element={<Solucoes />} />
           <Route path="/jornada-agentica" element={<Jornada />} />
           <Route path="/ecossistema" element={<Ecossistema />} />
-          <Route path="/cases" element={<Cases />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="*" element={<PageNotFound />} />

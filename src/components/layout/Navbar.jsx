@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Meta Empresa', href: '/meta-empresa' },
   { label: 'Soluções', href: '/solucoes-agenticas' },
   { label: 'Ecossistema', href: '/ecossistema' },
-  { label: 'Cases', href: '/cases' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Sobre', href: '/sobre' },
 ];
 
