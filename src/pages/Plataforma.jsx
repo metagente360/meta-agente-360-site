@@ -76,16 +76,30 @@ export default function Plataforma() {
       {/* VISÃO GERAL */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="Visão geral" headline="Tudo que um agente precisa para sair da ideia e chegar ao uso real." body="Criar um agente não é apenas escrever um prompt. É definir missão, contexto, canais, dados, uso, análise e evolução. O Meta Agente organiza essa jornada em uma plataforma visual." align="center" className="max-w-2xl mx-auto mb-14 text-center" />
-          <div className="grid sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {['Missão', 'Contexto', 'Canais', 'Dados', 'Análise', 'Evolução'].map((step, i) => (
-              <GlassCard key={i} delay={i * 0.07} className="p-4 text-center" hover={false}>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-xs font-bold text-brand-blue">{i + 1}</span>
-                </div>
-                <p className="text-sm font-semibold text-navy">{step}</p>
-              </GlassCard>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left — imagem da plataforma */}
+            <div className="flex items-center justify-center">
+              <img
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/92b0496ab_ChatGPTImage15dejunde202618_41_10.png"
+                alt="Plataforma Meta Agente 360"
+                className="w-full max-w-xl h-auto object-contain"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+            </div>
+            {/* Right — texto e passo a passo */}
+            <div>
+              <SectionHeader eyebrow="Visão geral" headline="Tudo que um agente precisa para sair da ideia e chegar ao uso real." body="Criar um agente não é apenas escrever um prompt. É definir missão, contexto, canais, dados, uso, análise e evolução. O Meta Agente organiza essa jornada em uma plataforma visual." />
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8">
+                {['Missão', 'Contexto', 'Canais', 'Dados', 'Análise', 'Evolução'].map((step, i) => (
+                  <GlassCard key={i} delay={i * 0.07} className="p-4 text-center" hover={false}>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xs font-bold text-brand-blue">{i + 1}</span>
+                    </div>
+                    <p className="text-sm font-semibold text-navy">{step}</p>
+                  </GlassCard>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
