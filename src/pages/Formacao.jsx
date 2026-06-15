@@ -101,9 +101,9 @@ export default function Formacao() {
               className="hidden lg:flex items-center justify-center"
             >
               <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/72def000f_ChatGPTImage15dejunde202617_40_12.png"
+                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/fad44e70e_formao.png"
                 alt="Formação Arquiteto de IA Agêntica"
-                className="w-full max-w-[560px] object-contain"
+                className="w-full max-w-[560px] object-contain scale-150"
               />
             </motion.div>
           </div>
