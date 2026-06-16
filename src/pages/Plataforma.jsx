@@ -250,11 +250,13 @@ export default function Plataforma() {
             )}
           </div>
           <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
-            {appTabs[activeTab].image ?
-            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/2be7bd337_image.png"
-
-            alt={appTabs[activeTab].label + ' - Meta Agente 360'}
-            className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" /> :
+            {appTabs[activeTab].image ? (
+              <img
+                src={appTabs[activeTab].image}
+                alt={appTabs[activeTab].label + ' - Meta Agente 360'}
+                className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10"
+              />
+            ) : (
 
 
             <div className="glass-card rounded-2xl p-12 text-center border-2 border-dashed border-brand-grey/60 bg-white/40">
@@ -264,7 +266,7 @@ export default function Plataforma() {
                 <p className="text-sm font-semibold text-navy/40 mb-1">{appTabs[activeTab].label}</p>
                 <p className="text-xs text-navy/25">Imagem em breve</p>
               </div>
-            }
+            )}
           </motion.div>
         </div>
       </section>
