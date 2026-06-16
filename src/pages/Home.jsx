@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Brain, Building2, Users, Layers, ArrowRight,
+  Brain, Building2, Users, Layers,
   BarChart3, Smartphone, Zap, ChevronRight,
   BookOpen, Star, Globe, Newspaper
 } from 'lucide-react';
@@ -233,46 +233,51 @@ export default function Home() {
       {/* ── WHAT IS META AGENTE ── */}
       <section className="py-20 bg-brand-ice bg-blueprint-grid">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <SectionHeader
-              eyebrow="O que é"
-              headline="Uma plataforma para criar agentes com contexto, canal e gestão."
-              body="No Meta Agente 360, você cria agentes personalizados, conecta conhecimentos e processos, publica em canais como WhatsApp, WebApp e ChatApp, acompanha dados e evolui suas soluções em um só ambiente."
-            />
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <SectionHeader
+                eyebrow="O que é"
+                headline="Uma plataforma para criar agentes com contexto, canal e gestão."
+                body="No Meta Agente 360, você cria agentes personalizados, conecta conhecimentos e processos, publica em canais como WhatsApp, WebApp e ChatApp, acompanha dados e evolui suas soluções em um só ambiente."
+              />
+              <Link to="/plataforma" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all duration-200 mt-6">
+                Ver a Plataforma Completa <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="space-y-3"
+              className="relative"
             >
-              {[
-                { icon: Brain, label: 'Conhecimento', desc: 'Documentos, processos, contexto' },
-                { icon: Zap, label: 'Agente', desc: 'Missão, comportamento, instruções' },
-                { icon: Smartphone, label: 'Canal', desc: 'WhatsApp, WebApp, ChatApp' },
-                { icon: BarChart3, label: 'Dados', desc: 'Métricas, conversas, evolução' },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="glass-card rounded-xl flex items-center gap-4 p-4"
-                >
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-4 h-4 text-brand-blue" strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-navy">{item.label}</p>
-                    <p className="text-xs text-navy/50">{item.desc}</p>
-                  </div>
-                  {i < 3 && <ArrowRight className="w-4 h-4 text-navy/20 ml-auto flex-shrink-0" />}
-                </motion.div>
-              ))}
-              <Link to="/plataforma" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all duration-200 mt-2 block text-right">
-                Ver a Plataforma Completa <ChevronRight className="w-4 h-4" />
-              </Link>
+              {/* Blue gradient shadow behind cards */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-brand-blue/8 via-brand-purple/5 to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
+              <div className="relative grid grid-cols-2 gap-3">
+                {[
+                  { icon: Brain, label: 'Conhecimento', desc: 'Documentos, processos' },
+                  { icon: Zap, label: 'Agente', desc: 'Missão, instruções' },
+                  { icon: Smartphone, label: 'Canal', desc: 'WhatsApp, WebApp' },
+                  { icon: BarChart3, label: 'Dados', desc: 'Métricas, evolução' },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="glass-card rounded-xl p-4 flex flex-col items-center text-center gap-2"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/12 to-brand-purple/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-navy">{item.label}</p>
+                      <p className="text-xs text-navy/50">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
