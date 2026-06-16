@@ -250,21 +250,21 @@ export default function Plataforma() {
             )}
           </div>
           <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
-            {appTabs[activeTab].image ? (
-              <img
-                src={appTabs[activeTab].image}
-                alt={appTabs[activeTab].label + ' - Meta Agente 360'}
-                className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10"
-              />
-            ) : (
-              <div className="glass-card rounded-2xl p-8 text-center">
+            {appTabs[activeTab].image ?
+            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/dc7f3d653_ChatGPT_Image_16_de_jun_de_2026__19_55_50.png"
+
+            alt={appTabs[activeTab].label + ' - Meta Agente 360'}
+            className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" /> :
+
+
+            <div className="glass-card rounded-2xl p-8 text-center">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center mx-auto mb-4">
                   {(() => {const Icon = appTabs[activeTab].icon;return <Icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />;})()}
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-navy mb-2">{appTabs[activeTab].label}</h3>
                 <p className="text-navy/65 text-[1.0625rem] leading-[1.7]">{appTabs[activeTab].desc}</p>
               </div>
-            )}
+            }
           </motion.div>
         </div>
       </section>
