@@ -170,7 +170,7 @@ export default function Plataforma() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex justify-center">
               
-              <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d9aefd06f_editar_agente_cell.png"
+              <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/7e66fc559_editar_agente_cell.png"
 
               alt="Editar Agente - Meta Agente 360"
               className="w-full max-w-[380px] lg:max-w-md h-auto" />
