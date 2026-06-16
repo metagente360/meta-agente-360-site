@@ -12,7 +12,7 @@ export default function GlassCard({
 }) {
   const base = dark
     ? 'bg-white/5 backdrop-blur-xl border border-white/10'
-    : 'bg-white/60 backdrop-blur-xl border border-white/50 shadow-sm shadow-navy/4';
+    : 'bg-white/60 backdrop-blur-xl border border-navy/10 shadow-sm shadow-navy/4';
 
   const hoverClass = hover && !dark
     ? 'hover:shadow-lg hover:shadow-navy/8 hover:border-brand-blue/20 hover:-translate-y-0.5 cursor-pointer'

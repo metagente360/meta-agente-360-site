@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {
   Brain, Building2, Users, Layers, ArrowRight,
   BarChart3, Smartphone, Zap, ChevronRight,
-  BookOpen, Star, Globe
+  BookOpen, Star, Globe, Newspaper
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -54,6 +54,14 @@ const paths = [
     body: 'Veja exemplos de agentes, aplicações, nichos e arquiteturas possíveis.',
     cta: 'Explorar Soluções',
     to: '/solucoes-agenticas',
+  },
+  {
+    icon: Newspaper,
+    eyebrow: 'Blog',
+    title: 'Quero me manter informado',
+    body: 'Acompanhe artigos, tendências e insights sobre IA agêntica, arquiteturas, automação e mercado.',
+    cta: 'Ver Blog',
+    to: '/blog',
   },
 ];
 
