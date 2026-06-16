@@ -131,8 +131,8 @@ export default function Plataforma() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+              
               <p className="eyebrow text-brand-blue mb-4">Edição e Hiperpersonalização</p>
               <h2 className="font-heading text-[1.75rem] sm:text-[2rem] font-semibold text-white leading-[1.2] tracking-tight mb-4">
                 Cada agente do seu jeito. Configure, personalize, evolua.
@@ -144,19 +144,19 @@ export default function Plataforma() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: 'Identidade do agente', desc: 'Nome, título, avatar e cor' },
-                  { label: 'Configuração de IA', desc: 'Modelo, temperatura, contexto' },
-                  { label: 'Prompts e regras', desc: 'Comportamento e limitações' },
-                  { label: 'Canais e ativação', desc: 'WhatsApp, WebApp e mais' },
-                ].map((item, i) => (
-                  <GlassCard key={i} dark delay={i * 0.07} className="p-4" hover={false}>
+                { label: 'Identidade do agente', desc: 'Nome, título, avatar e cor' },
+                { label: 'Configuração de IA', desc: 'Modelo, temperatura, contexto' },
+                { label: 'Prompts e regras', desc: 'Comportamento e limitações' },
+                { label: 'Canais e ativação', desc: 'WhatsApp, WebApp e mais' }].
+                map((item, i) =>
+                <GlassCard key={i} dark delay={i * 0.07} className="p-4" hover={false}>
                     <div className="w-6 h-6 rounded-lg bg-brand-blue/15 flex items-center justify-center mb-3">
                       <div className="w-2 h-2 rounded-sm bg-brand-blue" />
                     </div>
                     <p className="text-sm font-semibold text-white/85">{item.label}</p>
                     <p className="text-xs text-white/45 mt-1">{item.desc}</p>
                   </GlassCard>
-                ))}
+                )}
               </div>
               <div className="mt-8">
                 <GradientButton to="/contato">Falar com Especialista</GradientButton>
@@ -168,13 +168,13 @@ export default function Plataforma() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex justify-center"
-            >
-              <img
-                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/a7fe5bd06_editaragentecell.png"
-                alt="Editar Agente - Meta Agente 360"
-                className="w-full max-w-[380px] lg:max-w-md h-auto"
-              />
+              className="flex justify-center">
+              
+              <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d9aefd06f_editar_agente_cell.png"
+
+              alt="Editar Agente - Meta Agente 360"
+              className="w-full max-w-[380px] lg:max-w-md h-auto" />
+              
             </motion.div>
           </div>
         </div>
