@@ -286,23 +286,44 @@ export default function Home() {
       {/* ── HOW IT WORKS ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Da ideia ao agente"
-            headline="Crie, publique, gerencie e evolua."
-            align="center"
-            className="max-w-xl mx-auto mb-14 text-center"
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {howSteps.map((step, i) => (
-              <GlassCard key={i} delay={i * 0.08} className="p-5" hover={false}>
-                <span className="text-2xl font-heading font-bold text-brand-blue/20">{step.n}</span>
-                <h3 className="font-heading text-sm font-semibold text-navy mt-2 mb-2">{step.title}</h3>
-                <p className="text-xs text-navy/55 leading-relaxed">{step.body}</p>
-              </GlassCard>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <SecondaryButton to="/jornada-agentica">Conhecer a Jornada Agêntica</SecondaryButton>
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Left — steps */}
+            <div>
+              <SectionHeader
+                eyebrow="Da ideia ao agente"
+                headline="Crie, publique, gerencie e evolua."
+                className="mb-10"
+              />
+              <div className="grid grid-cols-2 gap-3">
+                {howSteps.map((step, i) => (
+                  <GlassCard key={i} delay={i * 0.08} className="p-4" hover={false}>
+                    <span className="text-xl font-heading font-bold text-brand-blue/20">{step.n}</span>
+                    <h3 className="font-heading text-sm font-semibold text-navy mt-2 mb-1">{step.title}</h3>
+                    <p className="text-xs text-navy/55 leading-relaxed">{step.body}</p>
+                  </GlassCard>
+                ))}
+              </div>
+              <div className="mt-8">
+                <SecondaryButton to="/jornada-agentica">Conhecer a Jornada Agêntica</SecondaryButton>
+              </div>
+            </div>
+            {/* Right — studio preview */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex justify-center"
+            >
+              <div className="relative">
+                <div className="absolute -inset-6 bg-gradient-to-br from-brand-blue/10 via-brand-purple/8 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                <img
+                  src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/1b04e61bf_asistente.png"
+                  alt="Estúdio Meta Agente 360"
+                  className="relative w-full max-w-md lg:max-w-lg h-auto rounded-2xl shadow-xl shadow-navy/10"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
