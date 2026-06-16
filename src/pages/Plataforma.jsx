@@ -122,20 +122,61 @@ export default function Plataforma() {
         </div>
       </section>
 
-      {/* CANAIS */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <SectionHeader eyebrow="Canais de Distribuição" headline="Publique onde as pessoas já estão." body="Disponibilize seus agentes por WhatsApp, WebApp, ChatApp, páginas públicas e QR Codes." align="center" className="max-w-xl mx-auto text-center" />
-        </div>
-        <div className="flex justify-center gap-4 flex-wrap px-4">
-          {channels.map((c, i) =>
-          <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }} className="glass-card rounded-2xl px-6 py-5 text-center min-w-[120px]">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center mx-auto mb-3">
-                <Smartphone className="w-4 h-4 text-brand-blue" strokeWidth={1.5} />
+      {/* EDIÇÃO E HIPERPERSONALIZAÇÃO */}
+      <section className="py-20 bg-navy overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Left — texto */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="eyebrow text-brand-blue mb-4">Edição e Hiperpersonalização</p>
+              <h2 className="font-heading text-[1.75rem] sm:text-[2rem] font-semibold text-white leading-[1.2] tracking-tight mb-4">
+                Cada agente do seu jeito. Configure, personalize, evolua.
+              </h2>
+              <p className="text-white/60 text-[1.0625rem] leading-[1.7] mb-8">
+                Edite identidade, persona, regras, formato e protocolos. Ajuste prompts, conecte fontes de conhecimento, 
+                defina canais e monitore cada agente com total controle. O Meta Agente 360 oferece um painel completo 
+                para você gerenciar e refinar cada detalhe do seu agente de IA.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: 'Identidade do agente', desc: 'Nome, título, avatar e cor' },
+                  { label: 'Configuração de IA', desc: 'Modelo, temperatura, contexto' },
+                  { label: 'Prompts e regras', desc: 'Comportamento e limitações' },
+                  { label: 'Canais e ativação', desc: 'WhatsApp, WebApp e mais' },
+                ].map((item, i) => (
+                  <GlassCard key={i} dark delay={i * 0.07} className="p-4" hover={false}>
+                    <div className="w-6 h-6 rounded-lg bg-brand-blue/15 flex items-center justify-center mb-3">
+                      <div className="w-2 h-2 rounded-sm bg-brand-blue" />
+                    </div>
+                    <p className="text-sm font-semibold text-white/85">{item.label}</p>
+                    <p className="text-xs text-white/45 mt-1">{item.desc}</p>
+                  </GlassCard>
+                ))}
               </div>
-              <p className="text-sm font-semibold text-navy">{c}</p>
+              <div className="mt-8">
+                <GradientButton to="/contato">Falar com Especialista</GradientButton>
+              </div>
             </motion.div>
-          )}
+            {/* Right — imagem sem moldura */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex justify-center"
+            >
+              <img
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/a7fe5bd06_editaragentecell.png"
+                alt="Editar Agente - Meta Agente 360"
+                className="w-full max-w-[380px] lg:max-w-md h-auto"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
