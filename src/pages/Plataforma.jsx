@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe, MessageCircle } from 'lucide-react';
+import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe, MessageCircle, ImageIcon } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SecondaryButton from '../components/ui/SecondaryButton';
@@ -250,21 +250,21 @@ export default function Plataforma() {
             )}
           </div>
           <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
-            {appTabs[activeTab].image ?
-            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/dc7f3d653_ChatGPT_Image_16_de_jun_de_2026__19_55_50.png"
-
-            alt={appTabs[activeTab].label + ' - Meta Agente 360'}
-            className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" /> :
-
-
-            <div className="glass-card rounded-2xl p-8 text-center">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center mx-auto mb-4">
-                  {(() => {const Icon = appTabs[activeTab].icon;return <Icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />;})()}
+            {appTabs[activeTab].image ? (
+              <img
+                src={appTabs[activeTab].image}
+                alt={appTabs[activeTab].label + ' - Meta Agente 360'}
+                className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10"
+              />
+            ) : (
+              <div className="glass-card rounded-2xl p-12 text-center border-2 border-dashed border-brand-grey/60 bg-white/40">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 flex items-center justify-center mx-auto mb-4">
+                  <ImageIcon className="w-7 h-7 text-brand-blue/25" strokeWidth={1} />
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-navy mb-2">{appTabs[activeTab].label}</h3>
-                <p className="text-navy/65 text-[1.0625rem] leading-[1.7]">{appTabs[activeTab].desc}</p>
+                <p className="text-sm font-semibold text-navy/40 mb-1">{appTabs[activeTab].label}</p>
+                <p className="text-xs text-navy/25">Imagem em breve</p>
               </div>
-            }
+            )}
           </motion.div>
         </div>
       </section>
