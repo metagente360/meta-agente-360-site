@@ -86,7 +86,7 @@ export default function Sobre() {
             {/* Imagem — ocupa 2 colunas em desktop */}
             <div className="lg:col-span-2 relative overflow-hidden h-[350px] lg:h-auto">
               <img
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop"
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d330664ad_Gemini_Generated_Image_2.png"
                 alt="Eduardo Rocha"
                 className="w-full h-full object-cover object-top"
               />

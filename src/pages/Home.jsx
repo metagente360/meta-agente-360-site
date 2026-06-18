@@ -155,7 +155,7 @@ function VideoModal() {
           <X className="w-5 h-5 text-white" />
         </button>
         <iframe
-          src="https://www.youtube.com/embed/dkEzqtUkZzc"
+          src="https://www.youtube.com/embed/dkEzqtUkZzc?autoplay=1&rel=0"
           className="rounded-2xl"
           style={{ width: '80vw', maxWidth: 900, aspectRatio: '16/9' }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
