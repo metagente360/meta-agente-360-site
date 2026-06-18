@@ -177,76 +177,69 @@ export default function Home() {
       {/* ── HERO ── */}
       <section
         ref={heroRef}
-        className="relative min-h-[100svh] flex items-center overflow-hidden bg-brand-ice bg-blueprint-grid pt-16"
+        className="relative min-h-[100svh] flex items-center overflow-hidden pt-16"
+        style={{ background: '#000' }}
       >
-        {/* Background halos */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-blue/6 rounded-full blur-[100px]" />
-          <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-brand-purple/5 rounded-full blur-[100px]" />
+        {/* Hero background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/77acc80d7_imghero.png"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/40 lg:bg-gradient-to-r lg:from-black/75 lg:via-black/50 lg:to-black/30" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left — copy */}
-            <div className="order-1 lg:order-1">
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="eyebrow text-brand-blue mb-4"
-              >
-                Meta Agente 360
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4"
-              >
-                Transforme conhecimento em agentes de IA que{' '}
-                <span className="gradient-text">trabalham, organizam</span>{' '}
-                e geram valor.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.35 }}
-                className="text-navy/65 text-[1.0625rem] leading-[1.7] mb-6 max-w-lg"
-              >
-                O Meta Agente 360 é a plataforma brasileira para criar, publicar, gerenciar e escalar agentes inteligentes com contexto, propósito e aplicação real.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.45 }}
-                className="flex flex-col sm:flex-row gap-3 mb-6"
-              >
-                <GradientButton to="/plataforma" size="lg">
-                  Conhecer a Plataforma
-                </GradientButton>
-                <SecondaryButton to="/formacao-arquiteto-ia-agentica" size="lg">
-                  Conhecer a Formação
-                </SecondaryButton>
-              </motion.div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-navy/40 text-xs leading-relaxed max-w-sm"
-              >
-                Para especialistas, consultores, empresas, criadores e profissionais que querem usar IA com método, contexto e propósito.
-              </motion.p>
-            </div>
-
-            {/* Right — hero image */}
-            <div className="order-2 lg:order-2 flex items-center justify-center">
-              <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/f6e19b230_imghero-home.png"
-                alt="Meta Agente 360"
-                className="w-full max-w-[260px] lg:max-w-md h-auto object-contain"
-                style={{ mixBlendMode: 'multiply' }}
-              />
-            </div>
+          <div className="max-w-2xl">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-[11px] font-bold uppercase tracking-[0.2em] mb-4"
+              style={{ color: '#6B4FD8' }}
+            >
+              Meta Agente 360
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-white leading-[1.1] tracking-tight mb-4"
+            >
+              Transforme conhecimento em agentes de IA que{' '}
+              <span className="gradient-text">trabalham, organizam</span>{' '}
+              e geram valor.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="text-white/65 text-[1.0625rem] leading-[1.7] mb-6 max-w-lg"
+            >
+              O Meta Agente 360 é a plataforma brasileira para criar, publicar, gerenciar e escalar agentes inteligentes com contexto, propósito e aplicação real.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="flex flex-col sm:flex-row gap-3 mb-6"
+            >
+              <GradientButton to="/plataforma" size="lg">
+                Conhecer a Plataforma
+              </GradientButton>
+              <SecondaryButton to="/formacao-arquiteto-ia-agentica" size="lg">
+                Conhecer a Formação
+              </SecondaryButton>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-white/40 text-xs leading-relaxed max-w-sm"
+            >
+              Para especialistas, consultores, empresas, criadores e profissionais que querem usar IA com método, contexto e propósito.
+            </motion.p>
           </div>
         </div>
       </section>
