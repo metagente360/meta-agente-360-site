@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import {
   Brain, Building2, Users, Layers,
   BarChart3, Smartphone, Zap, ChevronRight,
-  BookOpen, Star, Globe, Newspaper
+  BookOpen, Star, Globe, Newspaper,
+  Play, X, Lock, Server, Search, Clock
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -110,6 +111,61 @@ const cases = [
     body: 'Agentes para captar dados, orientar participantes, organizar listas e acompanhar jornadas de relacionamento.',
   },
 ];
+
+function VideoThumbnail() {
+  const openModal = () => {
+    const dialog = document.getElementById('video-modal');
+    if (dialog) dialog.showModal();
+  };
+  return (
+    <div
+      onClick={openModal}
+      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
+      style={{ aspectRatio: '16/9', borderRadius: 16 }}
+    >
+      <div className="absolute inset-0 bg-navy/50 z-10 transition-opacity group-hover:bg-navy/40" />
+      <div className="absolute inset-0 flex items-center justify-center z-20">
+        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+          <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-2xl" />
+      <div className="w-full h-full bg-navy rounded-2xl flex items-center justify-center">
+        <Play className="w-10 h-10 text-white/30" />
+      </div>
+    </div>
+  );
+}
+
+function VideoModal() {
+  return (
+    <dialog
+      id="video-modal"
+      className="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-0"
+      style={{ background: 'rgba(5,10,26,0.96)' }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) e.currentTarget.close();
+      }}
+    >
+      <div className="relative w-full h-full flex items-center justify-center p-4">
+        <button
+          onClick={() => document.getElementById('video-modal')?.close()}
+          className="absolute top-6 right-6 z-30 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+        >
+          <X className="w-5 h-5 text-white" />
+        </button>
+        <iframe
+          src="[VIDEO_INSTITUCIONAL_URL]"
+          className="rounded-2xl"
+          style={{ width: '80vw', maxWidth: 900, aspectRatio: '16/9' }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Vídeo Institucional Meta Agente 360"
+        />
+      </div>
+    </dialog>
+  );
+}
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -251,34 +307,59 @@ export default function Home() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              {/* Blue gradient shadow behind cards */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-brand-blue/8 via-brand-purple/5 to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
-              <div className="relative grid grid-cols-2 gap-3">
-                {[
-                  { icon: Brain, label: 'Conhecimento', desc: 'Documentos, processos' },
-                  { icon: Zap, label: 'Agente', desc: 'Missão, instruções' },
-                  { icon: Smartphone, label: 'Canal', desc: 'WhatsApp, WebApp' },
-                  { icon: BarChart3, label: 'Dados', desc: 'Métricas, evolução' },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="glass-card rounded-xl p-4 flex flex-col items-center text-center gap-2"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/12 to-brand-purple/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-navy">{item.label}</p>
-                      <p className="text-xs text-navy/50">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <VideoThumbnail />
+              <VideoModal />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── A PLATAFORMA — SEGURANÇA ── */}
+      <section className="py-20 bg-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-[11px] font-bold uppercase tracking-[0.2em] mb-4"
+              style={{ color: '#6B4FD8' }}
+            >
+              SEGURANÇA E INFRAESTRUTURA
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-heading font-extrabold leading-[1.2] mb-0"
+              style={{ fontSize: 'clamp(28px,3vw,40px)', color: '#F0F4FF' }}
+            >
+              Seus dados e os dos seus clientes, protegidos.
+            </motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {[
+              { icon: Lock, title: 'Dados criptografados', desc: 'Todas as informações armazenadas com criptografia em trânsito e em repouso.' },
+              { icon: Server, title: 'Infraestrutura robusta', desc: 'Plataforma hospedada dentro da Implanta, uma das maiores empresas de tecnologia do Brasil.' },
+              { icon: Search, title: 'Auditoria disponível', desc: 'Qualquer cliente pode solicitar auditoria da infraestrutura. Transparência total.' },
+              { icon: Clock, title: 'Disponibilidade 24/7', desc: 'Monitoramento contínuo e uptime garantido.' },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="p-7 rounded-2xl"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(107,79,216,0.15)' }}
+              >
+                <item.icon className="w-6 h-6 mb-4" style={{ color: '#6B4FD8' }} strokeWidth={1.5} />
+                <h3 className="text-sm font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-xs leading-relaxed text-white/55">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -340,6 +421,36 @@ export default function Home() {
           />
         </div>
         <MarqueeStrip />
+        <div id="cases-reais" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 scroll-mt-24">
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { foto: '[FOTO_CASE_1]', nome: '[CASE_1_NOME]', especialidade: '[CASE_1_ESPECIALIDADE]', agente: '[CASE_1_AGENTE]', resultado: '[CASE_1_RESULTADO]' },
+              { foto: '[FOTO_CASE_2]', nome: '[CASE_2_NOME]', especialidade: '[CASE_2_ESPECIALIDADE]', agente: '[CASE_2_AGENTE]', resultado: '[CASE_2_RESULTADO]' },
+              { foto: '[FOTO_CASE_3]', nome: '[CASE_3_NOME]', especialidade: '[CASE_3_ESPECIALIDADE]', agente: '[CASE_3_AGENTE]', resultado: '[CASE_3_RESULTADO]' },
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="bg-white rounded-[20px] p-9"
+                style={{ boxShadow: '0 8px 40px rgba(27,63,191,0.07)' }}
+              >
+                <img
+                  src={c.foto}
+                  alt={c.nome}
+                  className="w-14 h-14 rounded-full object-cover mb-4"
+                />
+                <p className="text-[15px] font-bold mb-1" style={{ color: '#1A2040' }}>{c.nome}</p>
+                <p className="text-[13px] mb-4" style={{ color: '#6B7A99' }}>{c.especialidade}</p>
+                <div className="w-full h-px my-4" style={{ background: '#EEF2FF' }} />
+                <p className="text-[17px] font-bold mb-2" style={{ color: '#1B3FBF' }}>{c.agente}</p>
+                <p className="text-[15px] leading-relaxed" style={{ color: '#2A3550' }}>{c.resultado}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
         <div className="text-center mt-10">
           <GradientButton to="/solucoes-agenticas">Explorar Soluções Agênticas</GradientButton>
         </div>
@@ -414,7 +525,9 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <SecondaryButton to="/cases">Ver Cases</SecondaryButton>
+            <a href="#cases-reais" className="inline-flex items-center gap-2 text-sm font-semibold text-navy px-5 py-2.5 rounded-xl border border-brand-grey hover:border-brand-blue/30 transition-all duration-300 min-h-[44px]">
+              Ver Cases <ChevronRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </section>

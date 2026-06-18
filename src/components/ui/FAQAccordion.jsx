@@ -31,6 +31,18 @@ const defaultFaqs = [
     q: 'O Meta Agente serve para empresas?',
     a: 'Sim. Empresas podem usar agentes para atendimento, processos internos, gestão de informação, treinamento, relatórios, dashboards e automações.',
   },
+  {
+    q: 'Para onde vão os meus dados?',
+    a: 'Todos os dados ficam em servidores brasileiros dentro da infraestrutura da Implanta, criptografados em trânsito e em repouso. Nunca compartilhamos dados com terceiros.',
+  },
+  {
+    q: 'Minha empresa precisa de um time de TI para implementar?',
+    a: 'Não. A plataforma foi projetada para especialistas de negócio, sem necessidade de programação. Você configura, publica e acompanha tudo pelo painel.',
+  },
+  {
+    q: 'Como funciona o suporte após a contratação?',
+    a: 'MetaProdutores e distribuidores têm acesso à comunidade, às lives com Eduardo e ao suporte via WhatsApp. Clientes empresa têm atendimento dedicado.',
+  },
 ];
 
 export default function FAQAccordion({ faqs = defaultFaqs, dark = false }) {

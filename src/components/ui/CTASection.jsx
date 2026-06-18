@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import GradientButton from './GradientButton';
-import SecondaryButton from './SecondaryButton';
 
 export default function CTASection({
   eyebrow,
@@ -13,30 +13,55 @@ export default function CTASection({
   dark = true,
 }) {
   return (
-    <section className={`py-20 ${dark ? 'bg-navy' : 'bg-brand-ice'}`}>
+    <section className="py-20" style={{ background: '#050A1A' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="relative glass-card-dark rounded-3xl p-10 md:p-16 text-center overflow-hidden"
+          className="relative rounded-[20px] md:rounded-3xl px-6 py-10 md:py-16 md:px-20 text-center overflow-hidden mx-0 md:mx-12"
+          style={{
+            background: 'linear-gradient(135deg, rgba(27,63,191,0.18) 0%, rgba(107,79,216,0.22) 50%, rgba(27,63,191,0.14) 100%)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(107,79,216,0.25)',
+          }}
         >
-          {/* Background halo */}
-          <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl" />
-            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-purple/8 rounded-full blur-3xl" />
-          </div>
+          {/* Decorative orb */}
+          <div
+            className="absolute pointer-events-none z-0"
+            style={{
+              top: -80,
+              right: -80,
+              width: 320,
+              height: 320,
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(107,79,216,0.2) 0%, transparent 70%)',
+              filter: 'blur(40px)',
+            }}
+          />
 
           <div className="relative z-10 max-w-2xl mx-auto">
             {eyebrow && (
-              <p className="eyebrow text-brand-blue mb-4">{eyebrow}</p>
+              <p
+                className="text-[11px] font-bold uppercase tracking-[0.15em] mb-4"
+                style={{ color: 'rgba(165,184,255,0.8)' }}
+              >
+                {eyebrow}
+              </p>
             )}
-            <h2 className="font-heading text-[1.75rem] sm:text-[2rem] font-semibold text-white leading-[1.2] tracking-tight mb-4">
+            <h2
+              className="font-heading text-[1.75rem] sm:text-[2rem] font-semibold leading-[1.2] tracking-tight mb-4"
+              style={{ color: '#F0F4FF' }}
+            >
               {headline}
             </h2>
             {body && (
-              <p className="text-white/60 text-[1.0625rem] leading-[1.7] mb-8">
+              <p
+                className="text-[1.0625rem] leading-[1.7] mb-8"
+                style={{ color: 'rgba(240,244,255,0.6)' }}
+              >
                 {body}
               </p>
             )}
@@ -44,15 +69,25 @@ export default function CTASection({
               <GradientButton to={primaryTo} size="lg">
                 {primaryLabel}
               </GradientButton>
-              {secondaryLabel && (
-                <SecondaryButton to={secondaryTo} size="lg" dark>
+              {secondaryLabel && secondaryTo && (
+                <Link
+                  to={secondaryTo}
+                  className="inline-flex items-center justify-center gap-2 text-base font-semibold rounded-full px-8 py-4 transition-all duration-200 min-h-[44px]"
+                  style={{
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    color: 'rgba(255,255,255,0.85)',
+                    backdropFilter: 'blur(8px)',
+                  }}
+                >
                   {secondaryLabel}
-                </SecondaryButton>
+                </Link>
               )}
             </div>
           </div>
         </motion.div>
       </div>
+
     </section>
   );
 }
