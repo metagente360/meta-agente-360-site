@@ -243,7 +243,7 @@ export default function Home() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/77acc80d7_imghero.png"
                 alt="Meta Agente 360"
-                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] h-auto object-contain scale-150"
+                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] h-auto object-contain scale-[1.8]"
               />
             </div>
           </div>
