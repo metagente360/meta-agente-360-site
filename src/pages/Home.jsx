@@ -5,7 +5,7 @@ import {
   Brain, Building2, Users, Layers,
   BarChart3, Smartphone, Zap, ChevronRight,
   BookOpen, Star, Globe, Newspaper,
-  Play, X, Lock, Server, Search, Clock
+  Play, Lock, Server, Search, Clock
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -112,14 +112,12 @@ const cases = [
 ];
 
 function VideoThumbnail() {
-  const openModal = () => {
-    const dialog = document.getElementById('video-modal');
-    if (dialog) dialog.showModal();
-  };
   return (
-    <div
-      onClick={openModal}
-      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
+    <a
+      href="https://www.youtube.com/watch?v=dkEzqtUkZzc"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg block"
       style={{ aspectRatio: '16/9', borderRadius: 16 }}
     >
       <img
@@ -133,37 +131,7 @@ function VideoThumbnail() {
           <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
         </div>
       </div>
-    </div>
-  );
-}
-
-function VideoModal() {
-  return (
-    <dialog
-      id="video-modal"
-      className="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-0"
-      style={{ background: 'rgba(5,10,26,0.96)' }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) e.currentTarget.close();
-      }}
-    >
-      <div className="relative w-full h-full flex items-center justify-center p-4">
-        <button
-          onClick={() => document.getElementById('video-modal')?.close()}
-          className="absolute top-6 right-6 z-30 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-        >
-          <X className="w-5 h-5 text-white" />
-        </button>
-        <iframe
-          src="https://www.youtube.com/embed/dkEzqtUkZzc?autoplay=1&rel=0"
-          className="rounded-2xl"
-          style={{ width: '80vw', maxWidth: 900, aspectRatio: '16/9' }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Vídeo Institucional Meta Agente 360"
-        />
-      </div>
-    </dialog>
+    </a>
   );
 }
 
@@ -307,7 +275,6 @@ export default function Home() {
               className="relative"
             >
               <VideoThumbnail />
-              <VideoModal />
             </motion.div>
           </div>
         </div>
