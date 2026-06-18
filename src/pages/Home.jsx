@@ -13,7 +13,6 @@ import SecondaryButton from '../components/ui/SecondaryButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import DashboardMockup from '../components/ui/DashboardMockup';
 import MarqueeStrip from '../components/ui/MarqueeStrip';
-import CTASection from '../components/ui/CTASection';
 
 const paths = [
   {
@@ -155,7 +154,7 @@ function VideoModal() {
           <X className="w-5 h-5 text-white" />
         </button>
         <iframe
-          src="[VIDEO_INSTITUCIONAL_URL]"
+          src="https://www.youtube.com/embed/dkEzqtUkZzc"
           className="rounded-2xl"
           style={{ width: '80vw', maxWidth: 900, aspectRatio: '16/9' }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -532,16 +531,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ── */}
-      <CTASection
-        eyebrow="Comece agora"
-        headline="O que você sabe pode virar agente. O que você cria pode virar solução."
-        body="Comece a construir com método, plataforma e um ecossistema que entende que a inteligência artificial só faz sentido quando amplia o potencial humano."
-        primaryLabel="Falar com Especialista"
-        primaryTo="/contato"
-        secondaryLabel="Conhecer a Formação"
-        secondaryTo="/formacao-arquiteto-ia-agentica"
-      />
+
     </main>
   );
 }

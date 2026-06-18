@@ -5,7 +5,6 @@ import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SecondaryButton from '../components/ui/SecondaryButton';
 import SectionHeader from '../components/ui/SectionHeader';
-import CTASection from '../components/ui/CTASection';
 import FAQAccordion from '../components/ui/FAQAccordion';
 
 const personas = [
@@ -213,7 +212,7 @@ export default function Formacao() {
         </div>
       </section>
 
-      <CTASection eyebrow="Entre agora" headline="Seu conhecimento pode ganhar escala." body="Entre para a formação e aprenda a criar agentes com método, prática e visão de mercado." primaryLabel="Quero me tornar Arquiteto de IA Agêntica" primaryTo="/contato" />
+
     </main>
   );
 }

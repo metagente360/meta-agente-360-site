@@ -5,7 +5,6 @@ import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import MarqueeStrip from '../components/ui/MarqueeStrip';
-import CTASection from '../components/ui/CTASection';
 
 const categories = [
   {
@@ -171,7 +170,7 @@ export default function Solucoes() {
         </div>
       </section>
 
-      <CTASection eyebrow="Existe uma solução para o seu processo" headline="Existe um agente possível para o seu processo." primaryLabel="Falar com Especialista" primaryTo="/contato" />
+
     </main>
   );
 }

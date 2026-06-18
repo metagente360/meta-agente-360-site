@@ -4,7 +4,6 @@ import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import MarqueeStrip from '../components/ui/MarqueeStrip';
-import CTASection from '../components/ui/CTASection';
 
 const canCreate = [
   { icon: Brain, label: 'Agentes especialistas', desc: 'Transformam conhecimento técnico em respostas precisas.' },
@@ -116,7 +115,7 @@ export default function MetaProdutor() {
         <MarqueeStrip items={monetizationItems} items2={['Implementação', 'Pacotes', 'Nicho', 'Consultoria', 'Produto digital', 'Recorrência', 'Escala', 'Licença', 'Treinamento', 'Parceria']} />
       </section>
 
-      <CTASection eyebrow="Comece agora" headline="Comece a criar soluções com o que você já sabe." primaryLabel="Falar com Especialista" primaryTo="/contato" />
+
     </main>
   );
 }

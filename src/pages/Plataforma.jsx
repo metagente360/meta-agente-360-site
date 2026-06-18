@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe, MessageCircle, ImageIcon } from 'lucide-react';
+import { Layers, Monitor, Zap, Smartphone, BarChart3, BookOpen, CreditCard, Copy, Globe, MessageCircle, ImageIcon, Lock, Server, Search, Clock } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SecondaryButton from '../components/ui/SecondaryButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import DashboardMockup from '../components/ui/DashboardMockup';
 import MarqueeStrip from '../components/ui/MarqueeStrip';
-import CTASection from '../components/ui/CTASection';
 import FAQAccordion from '../components/ui/FAQAccordion';
 
 const channels = ['WhatsApp', 'WebApp', 'ChatApp', 'Página Pública', 'QR Code'];
@@ -299,6 +298,56 @@ export default function Plataforma() {
         </div>
       </section>
 
+      {/* SEGURANÇA E INFRAESTRUTURA */}
+      <section className="py-20 bg-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="text-[11px] font-bold uppercase tracking-[0.2em] mb-4"
+              style={{ color: '#6B4FD8' }}
+            >
+              SEGURANÇA E INFRAESTRUTURA
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-heading font-semibold leading-[1.2] mb-0 text-[28px] sm:text-[32px] lg:text-[40px]"
+              style={{ color: '#F0F4FF' }}
+            >
+              Seus dados e os dos seus clientes, protegidos.
+            </motion.h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {[
+              { icon: Lock, title: 'Dados criptografados', desc: 'Todas as informações armazenadas com criptografia em trânsito e em repouso.' },
+              { icon: Server, title: 'Infraestrutura robusta', desc: 'Plataforma hospedada dentro da Implanta, uma das maiores empresas de tecnologia do Brasil.' },
+              { icon: Search, title: 'Auditoria disponível', desc: 'Qualquer cliente pode solicitar auditoria da infraestrutura. Transparência total.' },
+              { icon: Clock, title: 'Disponibilidade 24/7', desc: 'Monitoramento contínuo e uptime garantido.' },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="p-7 rounded-2xl"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(107,79,216,0.15)' }}
+              >
+                <item.icon className="w-6 h-6 mb-4" style={{ color: '#6B4FD8' }} strokeWidth={1.5} />
+                <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-xs leading-relaxed text-white/55">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-brand-ice">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,7 +356,7 @@ export default function Plataforma() {
         </div>
       </section>
 
-      <CTASection eyebrow="Próximo passo" headline="Veja como a plataforma pode sustentar seus agentes." primaryLabel="Falar com Especialista" primaryTo="/contato" />
+
     </main>);
 
 }

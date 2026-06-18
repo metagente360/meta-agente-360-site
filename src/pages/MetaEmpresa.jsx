@@ -4,7 +4,6 @@ import { MessageSquare, Settings, BarChart3, Users, Brain, TrendingUp, AlertCirc
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
-import CTASection from '../components/ui/CTASection';
 
 const painPoints = [
   { icon: AlertCircle, label: 'Informações espalhadas', desc: 'Dados em planilhas, e-mails, chats e documentos desconectados.' },
@@ -168,7 +167,7 @@ export default function MetaEmpresa() {
         </div>
       </section>
 
-      <CTASection eyebrow="Comece pelo processo certo" headline="O projeto não começa com a ferramenta. Começa com a pergunta: qual processo precisa ficar mais claro, inteligente ou escalável?" primaryLabel="Solicitar Diagnóstico" primaryTo="/contato" />
+
     </main>
   );
 }

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
-import CTASection from '../components/ui/CTASection';
 
 const steps = [
   {
@@ -144,7 +143,7 @@ export default function Jornada() {
         </div>
       </section>
 
-      <CTASection eyebrow="Seu agente precisa de método" headline="Seu agente precisa de método, não só de prompt." primaryLabel="Falar com Especialista" primaryTo="/contato" />
+
     </main>
   );
 }

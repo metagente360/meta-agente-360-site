@@ -3,7 +3,6 @@ import { Users, BookOpen, Zap, Globe, MessageCircle, ExternalLink } from 'lucide
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
-import CTASection from '../components/ui/CTASection';
 import EcossistemaIllustration from '../components/ecossistema/EcossistemaIllustration';
 
 const producers = [
@@ -175,7 +174,7 @@ export default function Ecossistema() {
         </div>
       </section>
 
-      <CTASection eyebrow="Faça parte" headline="Entre para uma rede que cria o futuro da inteligência agêntica." primaryLabel="Conhecer Formação" primaryTo="/formacao-arquiteto-ia-agentica" secondaryLabel="Falar com Especialista" secondaryTo="/contato" />
+
     </main>
   );
 }

@@ -304,8 +304,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      {/* ── CTA FINAL ── */}
-      <CTASection eyebrow="Conheça a plataforma" headline="Conheça a plataforma por trás dessa visão." primaryLabel="Ver Plataforma" primaryTo="/plataforma" secondaryLabel="Falar com Especialista" secondaryTo="/contato" />
+
     </main>
   );
 }
