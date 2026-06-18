@@ -241,10 +241,9 @@ export default function Home() {
             {/* Right — hero image */}
             <div className="order-2 lg:order-2 flex items-center justify-center">
               <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/f6e19b230_imghero-home.png"
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/77acc80d7_imghero.png"
                 alt="Meta Agente 360"
-                className="w-full max-w-[260px] lg:max-w-md h-auto object-contain"
-                style={{ mixBlendMode: 'multiply' }}
+                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] h-auto object-contain"
               />
             </div>
           </div>
