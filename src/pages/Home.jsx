@@ -112,12 +112,21 @@ const cases = [
 ];
 
 function VideoThumbnail() {
+  const openVideo = () => {
+    const w = Math.min(960, screen.width * 0.9);
+    const h = w * 9 / 16 + 40;
+    const left = (screen.width - w) / 2;
+    const top = (screen.height - h) / 2;
+    window.open(
+      'https://www.youtube.com/watch?v=dkEzqtUkZzc',
+      'video-popup',
+      `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=no`
+    );
+  };
   return (
-    <a
-      href="https://www.youtube.com/watch?v=dkEzqtUkZzc"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg block"
+    <div
+      onClick={openVideo}
+      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
       style={{ aspectRatio: '16/9', borderRadius: 16 }}
     >
       <img
@@ -131,7 +140,7 @@ function VideoThumbnail() {
           <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
