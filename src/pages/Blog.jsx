@@ -1,66 +1,14 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { PenLine, ArrowRight } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/ui/CTASection';
+import blogPosts from '../data/blogPosts';
 
-const posts = [
-  {
-    tag: 'IA Agêntica',
-    author: 'Meta Produtor · Saúde',
-    title: 'Como um agente de IA pode transformar a rotina de uma clínica',
-    excerpt: 'Agendamentos, prontuários, lembretes de consulta e acompanhamento pós-atendimento — tudo isso pode ser automatizado com inteligência agêntica sem abrir mão do cuidado humano.',
-    readTime: '5 min',
-    color: 'from-blue-500/10 to-blue-500/5',
-    accent: 'text-blue-600',
-  },
-  {
-    tag: 'Negócios',
-    author: 'Meta Produtor · Marketing',
-    title: 'Agentes de IA para agências: do briefing à entrega',
-    excerpt: 'Descubra como agências de marketing estão usando agentes para acelerar criação de pautas, relatórios de performance e relacionamento com clientes.',
-    readTime: '4 min',
-    color: 'from-brand-blue/10 to-brand-blue/5',
-    accent: 'text-brand-blue',
-  },
-  {
-    tag: 'Educação',
-    author: 'Meta Produtor · Educação',
-    title: 'O futuro do ensino personalizado começa com agentes inteligentes',
-    excerpt: 'Tutores virtuais, trilhas adaptativas e acompanhamento individual em escala — como produtores de conteúdo educacional estão se reinventando com IA agêntica.',
-    readTime: '6 min',
-    color: 'from-brand-purple/10 to-brand-purple/5',
-    accent: 'text-brand-purple',
-  },
-  {
-    tag: 'Jurídico',
-    author: 'Meta Produtor · Jurídico',
-    title: 'Escritórios de advocacia e a revolução dos agentes de triagem',
-    excerpt: 'Qualificação de casos, organização de prazos e atendimento inicial inteligente — como o setor jurídico está adotando agentes sem substituir o advogado.',
-    readTime: '5 min',
-    color: 'from-emerald-500/10 to-emerald-500/5',
-    accent: 'text-emerald-600',
-  },
-  {
-    tag: 'Vendas',
-    author: 'Meta Produtor · Comercial',
-    title: 'SDR agêntico: prospecção inteligente sem aumentar o time',
-    excerpt: 'Qualificação automática de leads, follow-up personalizado e CRM sempre atualizado. Veja como times de vendas estão escalando com agentes especializados.',
-    readTime: '4 min',
-    color: 'from-orange-500/10 to-orange-500/5',
-    accent: 'text-orange-600',
-  },
-  {
-    tag: 'Financeiro',
-    author: 'Meta Produtor · Finanças',
-    title: 'Contabilidade com agentes: menos planilha, mais estratégia',
-    excerpt: 'Conciliação, geração de relatórios e respostas automáticas para clientes — como contadores estão usando agentes para focar no que realmente importa.',
-    readTime: '5 min',
-    color: 'from-yellow-500/10 to-yellow-500/5',
-    accent: 'text-yellow-600',
-  },
-];
+const posts = blogPosts.map(({ slug, content, ...rest }) => rest);
+const postsWithSlug = blogPosts;
 
 export default function Blog() {
   return (
@@ -91,10 +39,17 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Artigos" headline="Perspectivas de quem está construindo." align="center" className="max-w-xl mx-auto mb-14 text-center" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post, i) => (
-              <GlassCard key={i} delay={i * 0.08} className="p-6 overflow-hidden relative flex flex-col">
-                <div className={`absolute inset-0 bg-gradient-to-br ${post.color} opacity-40 rounded-2xl`} />
-                <div className="relative z-10 flex flex-col flex-1">
+            {postsWithSlug.map((post, i) => (
+              <GlassCard key={i} delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col">
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                </div>
+                <div className="p-6 relative z-10 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <span className={`inline-block px-2.5 py-1 rounded-full bg-white/70 text-[10px] font-bold uppercase tracking-wider ${post.accent}`}>
                       {post.tag}
@@ -110,9 +65,9 @@ export default function Blog() {
                   <h3 className="font-heading text-base font-semibold text-navy mb-3 leading-snug">{post.title}</h3>
                   <p className="text-sm text-navy/60 leading-relaxed flex-1">{post.excerpt}</p>
                   <div className="mt-5 pt-4 border-t border-navy/8">
-                    <button className={`inline-flex items-center gap-1.5 text-xs font-semibold ${post.accent} hover:opacity-70 transition-opacity`}>
+                    <Link to={`/blog/${post.slug}`} className={`inline-flex items-center gap-1.5 text-xs font-semibold ${post.accent} hover:opacity-70 transition-opacity`}>
                       Ler artigo <ArrowRight className="w-3 h-3" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </GlassCard>

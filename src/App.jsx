@@ -21,6 +21,7 @@ import Solucoes from './pages/Solucoes';
 import Jornada from './pages/Jornada';
 import Ecossistema from './pages/Ecossistema';
 import Blog from './pages/Blog';
+import Artigo from './pages/Artigo';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 
@@ -58,6 +59,7 @@ const AuthenticatedApp = () => {
           <Route path="/jornada-agentica" element={<Jornada />} />
           <Route path="/ecossistema" element={<Ecossistema />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Artigo />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="*" element={<PageNotFound />} />

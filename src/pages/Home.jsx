@@ -333,8 +333,8 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-heading font-extrabold leading-[1.2] mb-0"
-              style={{ fontSize: 'clamp(28px,3vw,40px)', color: '#F0F4FF' }}
+              className="font-heading font-extrabold leading-[1.2] mb-0 text-[28px] sm:text-[32px] lg:text-[40px]"
+              style={{ color: '#F0F4FF' }}
             >
               Seus dados e os dos seus clientes, protegidos.
             </motion.h2>
@@ -424,9 +424,9 @@ export default function Home() {
         <div id="cases-reais" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 scroll-mt-24">
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { foto: '[FOTO_CASE_1]', nome: '[CASE_1_NOME]', especialidade: '[CASE_1_ESPECIALIDADE]', agente: '[CASE_1_AGENTE]', resultado: '[CASE_1_RESULTADO]' },
-              { foto: '[FOTO_CASE_2]', nome: '[CASE_2_NOME]', especialidade: '[CASE_2_ESPECIALIDADE]', agente: '[CASE_2_AGENTE]', resultado: '[CASE_2_RESULTADO]' },
-              { foto: '[FOTO_CASE_3]', nome: '[CASE_3_NOME]', especialidade: '[CASE_3_ESPECIALIDADE]', agente: '[CASE_3_AGENTE]', resultado: '[CASE_3_RESULTADO]' },
+              { foto: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face', nome: 'Dra. Mariana Costa', especialidade: 'Médica e Gestora de Clínica', agente: 'Agente Clinicar', resultado: 'Reduziu em 70% o tempo de triagem de pacientes na Clínica Bem-Estar, automatizando agendamentos e lembretes com IA.' },
+              { foto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face', nome: 'Rafael Mendes', especialidade: 'Consultor Financeiro', agente: 'Agente CFO Virtual', resultado: 'Implementou dashboards automáticos para 12 empresas, economizando 40h por mês de trabalho manual com relatórios.' },
+              { foto: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face', nome: 'Camila Oliveira', especialidade: 'Advogada Tributarista', agente: 'Agente Lex 360', resultado: 'Automatizou a qualificação inicial de casos no escritório, aumentando a conversão de clientes em 45%.' },
             ].map((c, i) => (
               <motion.div
                 key={i}

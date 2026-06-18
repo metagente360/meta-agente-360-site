@@ -84,7 +84,7 @@ export default function Sobre() {
           {/* Coluna esquerda — foto */}
           <div className="relative overflow-hidden h-[300px] lg:h-auto order-1 lg:order-1">
             <img
-              src="[FOTO_EDUARDO]"
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop"
               alt="Eduardo Rocha"
               className="w-full h-full object-cover object-top"
             />
@@ -105,6 +105,7 @@ export default function Sobre() {
 
             <h2
               className="font-heading font-extrabold leading-[1.2] mb-8"
+              className="font-heading"
               style={{ fontSize: 'clamp(22px,2.5vw,36px)' }}
             >
               <span style={{ color: '#F0F4FF' }}>Eduardo Rocha não criou uma plataforma de IA.</span>
@@ -112,7 +113,7 @@ export default function Sobre() {
               <span style={{ color: '#8B7CF8' }}>Ele criou um lugar onde o seu conhecimento ganha escala.</span>
             </h2>
 
-            <div style={{ fontSize: 18, color: 'rgba(240,244,255,0.72)', lineHeight: 1.8 }}>
+            <div className="font-body" style={{ fontSize: 18, color: 'rgba(240,244,255,0.72)', lineHeight: 1.8 }}>
               <p style={{ marginBottom: 24 }}>
                 Em 2015, Eduardo teve a felicidade de ter seu filho Arthur. Aos dois anos, a família percebeu que ele era diferente: não andava com firmeza, não falava, não tinha contato visual. Com cinco anos, os terapeutas disseram que Arthur jamais iria andar nem teria vida social.
               </p>
@@ -147,8 +148,8 @@ export default function Sobre() {
           </p>
 
           <h2
-            className="font-heading font-extrabold leading-[1.2] mb-12"
-            style={{ fontSize: 'clamp(28px,3vw,42px)', color: '#1A2040' }}
+            className="font-heading font-extrabold leading-[1.2] mb-12 text-[28px] sm:text-[32px] lg:text-[42px]"
+            style={{ color: '#1A2040' }}
           >
             Nascemos de uma necessidade real. Crescemos com quem acredita em IA com propósito.
           </h2>

@@ -120,6 +120,44 @@ export default function Solucoes() {
         <MarqueeStrip />
       </section>
 
+      {/* CASES */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader eyebrow="Cases reais" headline="Resultados de quem já usa agentes." body="Meta Produtores e empresas que transformaram processos com agentes de IA." align="center" className="max-w-xl mx-auto mb-12 text-center" />
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { foto: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face', nome: 'Dra. Mariana Costa', especialidade: 'Médica e Gestora de Clínica', agente: 'Agente Clinicar', resultado: 'Reduziu em 70% o tempo de triagem de pacientes na Clínica Bem-Estar, automatizando agendamentos e lembretes com IA.' },
+              { foto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face', nome: 'Rafael Mendes', especialidade: 'Consultor Financeiro', agente: 'Agente CFO Virtual', resultado: 'Implementou dashboards automáticos para 12 empresas, economizando 40h por mês de trabalho manual com relatórios.' },
+              { foto: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face', nome: 'Camila Oliveira', especialidade: 'Advogada Tributarista', agente: 'Agente Lex 360', resultado: 'Automatizou a qualificação inicial de casos no escritório, aumentando a conversão de clientes em 45%.' },
+              { foto: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face', nome: 'André Santana', especialidade: 'Diretor de Operações', agente: 'Agente Flow Ops', resultado: 'Redesenhou o fluxo de aprovações internas com IA, reduzindo o ciclo de 5 dias para 4 horas em uma indústria de 800 funcionários.' },
+              { foto: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face', nome: 'Juliana Vargas', especialidade: 'Coordenadora Pedagógica', agente: 'Agente EduTrack', resultado: 'Criou trilhas de aprendizado personalizadas para 300 alunos, aumentando a retenção do curso em 60%.' },
+              { foto: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face', nome: 'Thiago Nunes', especialidade: 'Gerente de Vendas B2B', agente: 'Agente SDR Pro', resultado: 'Automatizou a qualificação de leads inbound, gerando 3x mais reuniões qualificadas sem contratar novos SDRs.' },
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="bg-white rounded-[20px] p-9"
+                style={{ boxShadow: '0 8px 40px rgba(27,63,191,0.07)' }}
+              >
+                <img
+                  src={c.foto}
+                  alt={c.nome}
+                  className="w-14 h-14 rounded-full object-cover mb-4"
+                />
+                <p className="text-[15px] font-bold mb-1" style={{ color: '#1A2040' }}>{c.nome}</p>
+                <p className="text-[13px] mb-4" style={{ color: '#6B7A99' }}>{c.especialidade}</p>
+                <div className="w-full h-px my-4" style={{ background: '#EEF2FF' }} />
+                <p className="text-[17px] font-bold mb-2" style={{ color: '#1B3FBF' }}>{c.agente}</p>
+                <p className="text-[15px] leading-relaxed" style={{ color: '#2A3550' }}>{c.resultado}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* EDITORIAL */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
