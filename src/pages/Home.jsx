@@ -122,15 +122,16 @@ function VideoThumbnail() {
       className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
       style={{ aspectRatio: '16/9', borderRadius: 16 }}
     >
-      <div className="absolute inset-0 bg-navy/50 z-10 transition-opacity group-hover:bg-navy/40" />
+      <img
+        src="https://img.youtube.com/vi/dkEzqtUkZzc/maxresdefault.jpg"
+        alt="Vídeo Institucional Meta Agente 360"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-navy/40 z-10 transition-opacity group-hover:bg-navy/25" />
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
           <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
         </div>
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-2xl" />
-      <div className="w-full h-full bg-navy rounded-2xl flex items-center justify-center">
-        <Play className="w-10 h-10 text-white/30" />
       </div>
     </div>
   );
