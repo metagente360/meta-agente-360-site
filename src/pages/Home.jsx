@@ -239,11 +239,11 @@ export default function Home() {
             </div>
 
             {/* Right — hero image */}
-            <div className="order-2 lg:order-2 flex items-center justify-end overflow-hidden">
+            <div className="order-2 lg:order-2 flex items-center justify-center">
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/77acc80d7_imghero.png"
                 alt="Meta Agente 360"
-                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] h-auto object-contain scale-180 origin-right"
+                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] h-auto object-contain scale-150"
               />
             </div>
           </div>
