@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Zap, ArrowRight } from 'lucide-react';
-
 const footerLinks = {
   Plataforma: [
     { label: 'Plataforma', href: '/plataforma' },
@@ -24,23 +22,6 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        {/* CTA strip */}
-        <div className="glass-card-dark rounded-2xl p-8 mb-16 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-brand-blue mb-2">Comece agora</p>
-            <h3 className="font-heading text-xl font-semibold text-white">
-              Transforme conhecimento em agentes de IA.
-            </h3>
-          </div>
-          <Link
-            to="/contato"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-purple text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-blue/30 transition-all duration-300 flex-shrink-0"
-          >
-            Falar com Especialista
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
         {/* Main footer grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
