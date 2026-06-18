@@ -333,7 +333,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-heading font-extrabold leading-[1.2] mb-0 text-[28px] sm:text-[32px] lg:text-[40px]"
+              className="font-heading font-semibold leading-[1.2] mb-0 text-[28px] sm:text-[32px] lg:text-[40px]"
               style={{ color: '#F0F4FF' }}
             >
               Seus dados e os dos seus clientes, protegidos.

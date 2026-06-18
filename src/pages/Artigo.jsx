@@ -74,14 +74,49 @@ export default function Artigo() {
         </article>
       </section>
 
-      <CTASection
-        eyebrow="Gostou do conteúdo?"
-        headline="Transforme conhecimento em agentes de IA."
-        primaryLabel="Falar com Especialista"
-        primaryTo="/contato"
-        secondaryLabel="Mais Artigos"
-        secondaryTo="/blog"
-      />
+      {/* Sugestões de leitura */}
+      <section className="py-16 bg-brand-ice">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <p className="eyebrow text-brand-blue mb-3">Leia também</p>
+            <h2 className="font-heading text-[1.5rem] sm:text-[1.75rem] font-semibold text-navy leading-[1.2] tracking-tight mb-8">
+              Conteúdos que complementam sua leitura
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {blogPosts
+                .filter((p) => p.slug !== slug)
+                .slice(0, 2)
+                .map((p, i) => (
+                  <Link
+                    key={i}
+                    to={`/blog/${p.slug}`}
+                    className="group glass-card rounded-2xl p-5 hover:shadow-lg hover:shadow-navy/6 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0">
+                        <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                      </div>
+                      <div>
+                        <span className={`inline-block text-[10px] font-bold uppercase tracking-wider mb-1.5 ${p.accent}`}>
+                          {p.tag}
+                        </span>
+                        <h3 className="font-heading text-sm font-semibold text-navy leading-snug group-hover:text-brand-blue transition-colors">
+                          {p.title}
+                        </h3>
+                        <p className="text-[11px] text-navy/40 mt-1">{p.readTime} de leitura</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-blue hover:gap-3 transition-all">
+                Ver todos os artigos <ArrowLeft className="w-3.5 h-3.5 rotate-180" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
