@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageSquare, Settings, BarChart3, Users, Brain, TrendingUp, AlertCircle } from 'lucide-react';
+import { MessageSquare, Settings, BarChart3, Users, TrendingUp, AlertCircle } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -39,15 +39,6 @@ const areas = [
     label: 'Operação',
     agents: ['Agente de processos internos', 'Agente de checklist', 'Agente de documentação', 'Agente de auditoria'],
   },
-];
-
-const boardAgents = [
-  { label: 'Atendimento', pos: 'top-0 left-1/2 -translate-x-1/2' },
-  { label: 'Financeiro', pos: 'top-1/4 right-0' },
-  { label: 'Marketing', pos: 'bottom-1/4 right-0' },
-  { label: 'Dados', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
-  { label: 'RH', pos: 'bottom-1/4 left-0' },
-  { label: 'Operação', pos: 'top-1/4 left-0' },
 ];
 
 export default function MetaEmpresa() {
@@ -159,31 +150,19 @@ export default function MetaEmpresa() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <SectionHeader eyebrow="Board de Agentes" headline="Vários agentes trabalhando como uma arquitetura." body="Um Board de Agentes conecta agentes especializados em diferentes funções, coordenados por um agente gestor central." dark />
 
-            {/* Board diagram */}
-            <div className="relative h-64 flex items-center justify-center">
-              {/* Center agent */}
-              <motion.div
-                animate={{ scale: [1, 1.04, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center shadow-lg shadow-brand-blue/30 z-10"
-              >
-                <Brain className="w-7 h-7 text-white" strokeWidth={1.5} />
-              </motion.div>
-
-              {/* Surrounding agents */}
-              {boardAgents.map((agent, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className={`absolute glass-card-dark rounded-xl px-3 py-2 text-xs font-medium text-white/80 ${agent.pos}`}
-                >
-                  {agent.label}
-                </motion.div>
-              ))}
-            </div>
+            {/* Board image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <img
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0a8f012d5_img5.png"
+                alt="Board de Agentes - Arquitetura de IA"
+                className="w-full h-auto"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
