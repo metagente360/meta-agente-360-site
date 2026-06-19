@@ -334,7 +334,7 @@ export default function Formacao() {
       </section>
 
       {/* PARA QUEM É */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Para quem é"
@@ -342,22 +342,41 @@ export default function Formacao() {
             align="center"
             className="max-w-xl mx-auto mb-12 text-center"
           />
-          <div className="max-w-2xl mx-auto space-y-3">
-            {paraQuem.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-center gap-4"
-              >
-                <div className="w-6 h-6 rounded-full bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5 text-brand-blue" strokeWidth={3} />
-                </div>
-                <span className="text-[1.0625rem] text-navy/75">{item}</span>
-              </motion.div>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Checklist */}
+            <div className="space-y-3">
+              {paraQuem.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="glass-card rounded-xl p-4 flex items-center gap-4 group hover:border-brand-blue/20 transition-all duration-300"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-brand-blue/8 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue/15 transition-colors duration-300">
+                    <Check className="w-4 h-4 text-brand-blue" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm font-medium text-navy/75 leading-snug">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+            {/* Imagem humanizada com fade */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:flex items-center justify-center relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-10" />
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                alt="Profissional criando soluções com tecnologia"
+                className="w-full max-w-[440px] object-cover rounded-2xl opacity-85"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
