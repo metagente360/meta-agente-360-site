@@ -339,8 +339,8 @@ export default function Formacao() {
         <div className="hidden lg:block absolute inset-y-0 right-0 w-[48%]">
           <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent z-10" />
           <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80"
-            alt="Profissional criando soluções com tecnologia"
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80"
+            alt="Profissional usando tecnologia para criar e inovar"
             className="w-full h-full object-cover"
           />
         </div>
