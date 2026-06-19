@@ -231,43 +231,66 @@ export default function Formacao() {
             align="center"
             className="max-w-xl mx-auto mb-12 text-center"
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {included.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
-              >
-                <GlassCard className="p-6 h-full group">
-                  <div className="flex flex-col items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center group-hover:from-brand-blue/25 group-hover:to-brand-purple/25 transition-all duration-300">
-                      <item.icon className="w-6 h-6 text-brand-blue" strokeWidth={1.5} />
+          <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-10 items-center">
+            {/* Cards à esquerda */}
+            <div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {/* Créditos — ocupa 2 colunas com destaque */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45 }}
+                  className="sm:col-span-2"
+                >
+                  <div className="glass-card rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 border-brand-blue/20">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-2xl bg-brand-blue flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-blue/20">
+                        <Zap className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-navy">{included[2].label}</p>
+                        <p className="text-xs text-navy/50 mt-0.5">Para você criar, testar e publicar seus agentes sem se preocupar com limites.</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-semibold text-navy leading-snug">{item.label}</p>
                   </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
-          {/* Destaque central */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 max-w-3xl mx-auto"
-          >
-            <div className="glass-card rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left bg-gradient-to-r from-brand-blue/5 to-brand-purple/5">
-              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5 text-white" />
+                </motion.div>
+                {/* Demais cards */}
+                {included.filter((_, i) => i !== 2).map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: (i + 1) * 0.08 }}
+                  >
+                    <GlassCard className="p-5 h-full group">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center flex-shrink-0 group-hover:from-brand-blue/20 group-hover:to-brand-purple/20 transition-all duration-300">
+                          <item.icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />
+                        </div>
+                        <p className="text-sm font-semibold text-navy leading-snug">{item.label}</p>
+                      </div>
+                    </GlassCard>
+                  </motion.div>
+                ))}
               </div>
-              <p className="text-sm font-medium text-navy">
-                <strong className="text-brand-blue">10.000 créditos mensais</strong> na plataforma para você criar, testar e publicar seus agentes sem se preocupar com limites.
-              </p>
             </div>
-          </motion.div>
+            {/* Imagem à direita */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:flex items-center justify-center"
+            >
+              <img
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d2cc9aed8_img3.png"
+                alt="Ecossistema de créditos e benefícios da formação"
+                className="w-full max-w-[320px] object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
