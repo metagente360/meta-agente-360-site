@@ -31,9 +31,17 @@ export default function MetaProdutor() {
   return (
     <main>
       {/* HERO */}
-      <section className="min-h-[100svh] flex items-center bg-brand-ice bg-blueprint-grid pt-16 overflow-hidden">
+      <section className="min-h-[100svh] flex items-center bg-brand-ice bg-blueprint-grid pt-16 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-brand-purple/6 rounded-full blur-[100px]" />
+        </div>
+        {/* Imagem de fundo — atrás do conteúdo */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[50%] pointer-events-none z-0">
+          <img
+            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/190dce66e_img4.png"
+            alt=""
+            className="absolute inset-0 w-full h-full object-contain scale-[1.6] opacity-20"
+          />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -49,18 +57,8 @@ export default function MetaProdutor() {
                 <GradientButton to="/contato" size="lg">Quero ser Meta Produtor</GradientButton>
               </motion.div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center"
-            >
-              <img
-                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/190dce66e_img4.png"
-                alt="Meta Produtor — ecossistema de IA"
-                className="w-full max-w-[560px] object-contain scale-[1.6]"
-              />
-            </motion.div>
+            {/* Coluna direita — espaço reservado para manter o grid */}
+            <div className="hidden lg:block" />
           </div>
         </div>
       </section>
