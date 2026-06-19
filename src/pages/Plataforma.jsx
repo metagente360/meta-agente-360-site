@@ -265,7 +265,7 @@ export default function Plataforma() {
             className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" />
             }
             {activeTab === 3 &&
-            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/dc7f3d653_ChatGPT_Image_16_de_jun_de_2026__19_55_50.png"
+            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/9cccde898_ChatGPT_Image_19_de_jun_de_2026__10_39_16.png"
             alt="Meta Análise - Meta Agente 360"
             className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" />
             }
