@@ -152,7 +152,7 @@ export default function Formacao() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/37a87d515_img2.png"
                 alt="Arquitetura de IA Agêntica — hub de inteligência com agentes conectados"
-                className="w-full max-w-[480px] object-contain"
+                className="w-[80%] max-w-[384px] object-contain"
               />
             </motion.div>
             {/* Caixa de texto à direita */}
