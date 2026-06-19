@@ -138,20 +138,44 @@ export default function Formacao() {
       </section>
 
       {/* O QUE VOCÊ SE TORNA */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-card rounded-2xl p-6 sm:p-10 max-w-3xl mx-auto">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-purple/15 to-brand-purple/5 flex items-center justify-center flex-shrink-0">
-                <UserCheck className="w-6 h-6 text-brand-purple" strokeWidth={1.5} />
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Imagem à esquerda */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center justify-center"
+            >
+              <img
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/37a87d515_img2.png"
+                alt="Arquitetura de IA Agêntica — hub de inteligência com agentes conectados"
+                className="w-full max-w-[480px] object-contain"
+              />
+            </motion.div>
+            {/* Caixa de texto à direita */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="glass-card rounded-2xl p-6 sm:p-10">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-purple/15 to-brand-purple/5 flex items-center justify-center flex-shrink-0">
+                    <UserCheck className="w-6 h-6 text-brand-purple" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-brand-purple uppercase tracking-wider mb-2">O que você se torna</p>
+                    <p className="text-navy/70 text-[1.0625rem] leading-[1.7]">
+                      Um <strong className="text-navy">Arquiteto de IA Agêntica</strong> que cria agentes inteligentes personalizados com o próprio conhecimento e especialidade, sem precisar programar, e os aplica para otimizar, automatizar e monetizar processos reais.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-bold text-brand-purple uppercase tracking-wider mb-2">O que você se torna</p>
-                <p className="text-navy/70 text-[1.0625rem] leading-[1.7]">
-                  Um <strong className="text-navy">Arquiteto de IA Agêntica</strong> que cria agentes inteligentes personalizados com o próprio conhecimento e especialidade, sem precisar programar, e os aplica para otimizar, automatizar e monetizar processos reais.
-                </p>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
