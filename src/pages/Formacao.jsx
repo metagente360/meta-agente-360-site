@@ -231,7 +231,7 @@ export default function Formacao() {
             align="center"
             className="max-w-xl mx-auto mb-12 text-center"
           />
-          <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-10 items-center">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-10 items-center">
             {/* Cards à esquerda */}
             <div>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -287,7 +287,7 @@ export default function Formacao() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d2cc9aed8_img3.png"
                 alt="Ecossistema de créditos e benefícios da formação"
-                className="w-full max-w-[320px] object-contain"
+                className="w-full max-w-[380px] object-contain"
               />
             </motion.div>
           </div>
