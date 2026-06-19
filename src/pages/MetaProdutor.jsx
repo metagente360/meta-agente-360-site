@@ -36,16 +36,30 @@ export default function MetaProdutor() {
           <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-brand-purple/6 rounded-full blur-[100px]" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="max-w-3xl">
-            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Produtor</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4">
-              Transforme sua especialidade em <span className="gradient-text">agentes de IA.</span>
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-navy/65 text-[1.0625rem] leading-[1.7] mb-6 max-w-xl">
-              O Meta Produtor é quem cria, implementa e monetiza soluções agênticas usando o Meta Agente 360.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.35 }}>
-              <GradientButton to="/contato" size="lg">Quero ser Meta Produtor</GradientButton>
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Produtor</motion.p>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-4">
+                Transforme sua especialidade em <span className="gradient-text">agentes de IA.</span>
+              </motion.h1>
+              <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-navy/65 text-[1.0625rem] leading-[1.7] mb-6 max-w-xl">
+                O Meta Produtor é quem cria, implementa e monetiza soluções agênticas usando o Meta Agente 360.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.35 }}>
+                <GradientButton to="/contato" size="lg">Quero ser Meta Produtor</GradientButton>
+              </motion.div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:flex items-center justify-center"
+            >
+              <img
+                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/190dce66e_img4.png"
+                alt="Meta Produtor — ecossistema de IA"
+                className="w-full max-w-[560px] object-contain scale-150"
+              />
             </motion.div>
           </div>
         </div>
