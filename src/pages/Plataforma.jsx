@@ -250,7 +250,7 @@ export default function Plataforma() {
           </div>
           <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
             {activeTab === 0 &&
-            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/a510f5285_image.png"
+            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/2be7bd337_image.png"
             alt="Meta Chat - Meta Agente 360"
             className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" />
             }
