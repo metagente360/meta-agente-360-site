@@ -73,7 +73,7 @@ export default function MetaEmpresa() {
           <img
             src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0179fdfa8_ChatGPTImage19dejunde202616_53_52.png"
             alt="Meta Empresa"
-            className="w-full h-full object-cover object-left"
+            className="w-full h-full object-contain"
             style={{
               maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)',
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)',
