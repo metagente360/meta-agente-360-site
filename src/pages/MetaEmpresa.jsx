@@ -69,7 +69,7 @@ export default function MetaEmpresa() {
         </div>
 
         {/* Imagem lateral com fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-[45%] lg:w-[48%] hidden lg:block">
+        <div className="absolute right-0 top-16 bottom-0 w-[42%] lg:w-[44%] hidden lg:block">
           <img
             src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0179fdfa8_ChatGPTImage19dejunde202616_53_52.png"
             alt="Meta Empresa"
