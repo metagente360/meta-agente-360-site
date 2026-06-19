@@ -223,7 +223,7 @@ export default function Formacao() {
       </section>
 
       {/* O QUE ESTÁ INCLUÍDO */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-ice bg-blueprint-grid">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Incluso"
@@ -231,23 +231,43 @@ export default function Formacao() {
             align="center"
             className="max-w-xl mx-auto mb-12 text-center"
           />
-          <div className="max-w-2xl mx-auto space-y-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {included.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex items-center gap-4 glass-card rounded-xl p-5"
+                transition={{ duration: 0.45, delay: i * 0.08 }}
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-5 h-5 text-brand-blue" strokeWidth={1.5} />
-                </div>
-                <span className="text-sm font-semibold text-navy">{item.label}</span>
+                <GlassCard className="p-6 h-full group">
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center group-hover:from-brand-blue/25 group-hover:to-brand-purple/25 transition-all duration-300">
+                      <item.icon className="w-6 h-6 text-brand-blue" strokeWidth={1.5} />
+                    </div>
+                    <p className="text-sm font-semibold text-navy leading-snug">{item.label}</p>
+                  </div>
+                </GlassCard>
               </motion.div>
             ))}
           </div>
+          {/* Destaque central */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-6 max-w-3xl mx-auto"
+          >
+            <div className="glass-card rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left bg-gradient-to-r from-brand-blue/5 to-brand-purple/5">
+              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center flex-shrink-0">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <p className="text-sm font-medium text-navy">
+                <strong className="text-brand-blue">10.000 créditos mensais</strong> na plataforma para você criar, testar e publicar seus agentes sem se preocupar com limites.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
