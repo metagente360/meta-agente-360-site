@@ -17,12 +17,11 @@ export default function SecondaryButton({
   };
 
   const cls = cn(
-    'inline-flex items-center gap-2 font-medium',
-    'border rounded-xl transition-all duration-300',
+    'inline-flex items-center gap-2 font-semibold',
+    'rounded-xl transition-all duration-300',
     'min-h-[44px]',
-    dark
-      ? 'border-white/20 text-white hover:border-white/40 hover:bg-white/5'
-      : 'border-brand-grey text-navy hover:border-brand-blue/40 hover:bg-brand-blue/4',
+    'bg-gradient-to-r from-brand-blue to-brand-purple text-white',
+    'hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5',
     'focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2',
     sizes[size],
     className
