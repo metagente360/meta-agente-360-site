@@ -374,18 +374,27 @@ export default function Home() {
                 headline="Crie, publique, gerencie e evolua."
                 className="mb-6"
               />
-              <div className="grid grid-cols-2 gap-2">
-                {howSteps.map((step, i) => (
-                  <GlassCard key={i} delay={i * 0.08} className="p-3" hover={false}>
-                    <span className="text-lg font-heading font-bold text-brand-blue/20">{step.n}</span>
-                    <h3 className="font-heading text-xs font-semibold text-navy mt-1.5 mb-0.5">{step.title}</h3>
-                    <p className="text-[11px] text-navy/55 leading-relaxed">{step.body}</p>
-                  </GlassCard>
-                ))}
-              </div>
-              <div className="mt-8">
-                <SecondaryButton to="/jornada-agentica">Conhecer a Jornada Agêntica</SecondaryButton>
-              </div>
+              <div className="space-y-2">
+                {/* Primeiro passo — largura total */}
+                <GlassCard delay={0} className="p-2.5" hover={false}>
+                  <span className="text-base font-heading font-bold text-brand-blue/20">{howSteps[0].n}</span>
+                  <h3 className="font-heading text-[11px] font-semibold text-navy mt-1 mb-0.5">{howSteps[0].title}</h3>
+                  <p className="text-[10px] text-navy/55 leading-snug">{howSteps[0].body}</p>
+                </GlassCard>
+                {/* Demais passos — grid 2x2 */}
+                <div className="grid grid-cols-2 gap-2">
+                  {howSteps.slice(1).map((step, i) => (
+                    <GlassCard key={i} delay={(i + 1) * 0.08} className="p-2.5" hover={false}>
+                      <span className="text-base font-heading font-bold text-brand-blue/20">{step.n}</span>
+                      <h3 className="font-heading text-[11px] font-semibold text-navy mt-1 mb-0.5">{step.title}</h3>
+                      <p className="text-[10px] text-navy/55 leading-snug">{step.body}</p>
+                    </GlassCard>
+                  ))}
+                  </div>
+                  </div>
+                  <div className="mt-6">
+                  <SecondaryButton to="/jornada-agentica">Conhecer a Jornada Agêntica</SecondaryButton>
+                  </div>
             </div>
             {/* Right — studio preview */}
             <motion.div
