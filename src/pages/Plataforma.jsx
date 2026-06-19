@@ -250,7 +250,7 @@ export default function Plataforma() {
           </div>
           <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
             {appTabs[activeTab].image ?
-            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/2be7bd337_image.png"
+            <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/dc7f3d653_ChatGPT_Image_16_de_jun_de_2026__19_55_50.png"
 
             alt={appTabs[activeTab].label + ' - Meta Agente 360'}
             className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" /> :
@@ -308,8 +308,8 @@ export default function Plataforma() {
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
               className="text-[11px] font-bold uppercase tracking-[0.2em] mb-4"
-              style={{ color: '#6B4FD8' }}
-            >
+              style={{ color: '#6B4FD8' }}>
+              
               SEGURANÇA E INFRAESTRUTURA
             </motion.p>
             <motion.h2
@@ -318,32 +318,32 @@ export default function Plataforma() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-heading font-semibold leading-[1.2] mb-0 text-[28px] sm:text-[32px] lg:text-[40px]"
-              style={{ color: '#F0F4FF' }}
-            >
+              style={{ color: '#F0F4FF' }}>
+              
               Seus dados e os dos seus clientes, protegidos.
             </motion.h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {[
-              { icon: Lock, title: 'Dados criptografados', desc: 'Todas as informações armazenadas com criptografia em trânsito e em repouso.' },
-              { icon: Server, title: 'Infraestrutura robusta', desc: 'Plataforma hospedada dentro da Implanta, uma das maiores empresas de tecnologia do Brasil.' },
-              { icon: Search, title: 'Auditoria disponível', desc: 'Qualquer cliente pode solicitar auditoria da infraestrutura. Transparência total.' },
-              { icon: Clock, title: 'Disponibilidade 24/7', desc: 'Monitoramento contínuo e uptime garantido.' },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="p-7 rounded-2xl"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(107,79,216,0.15)' }}
-              >
+            { icon: Lock, title: 'Dados criptografados', desc: 'Todas as informações armazenadas com criptografia em trânsito e em repouso.' },
+            { icon: Server, title: 'Infraestrutura robusta', desc: 'Plataforma hospedada dentro da Implanta, uma das maiores empresas de tecnologia do Brasil.' },
+            { icon: Search, title: 'Auditoria disponível', desc: 'Qualquer cliente pode solicitar auditoria da infraestrutura. Transparência total.' },
+            { icon: Clock, title: 'Disponibilidade 24/7', desc: 'Monitoramento contínuo e uptime garantido.' }].
+            map((item, i) =>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="p-7 rounded-2xl"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(107,79,216,0.15)' }}>
+              
                 <item.icon className="w-6 h-6 mb-4" style={{ color: '#6B4FD8' }} strokeWidth={1.5} />
                 <h3 className="text-sm font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-xs leading-relaxed text-white/55">{item.desc}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
