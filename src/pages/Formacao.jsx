@@ -345,13 +345,14 @@ export default function Formacao() {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeader
-            eyebrow="Para quem é"
-            headline="Para quem é essa formação."
-            align="left"
-            className="max-w-xl mb-12 ml-auto"
-          />
-          <div className="max-w-lg ml-auto space-y-3">
+          <div className="max-w-lg ml-auto">
+            <SectionHeader
+              eyebrow="Para quem é"
+              headline="Para quem é essa formação."
+              align="left"
+              className="mb-10"
+            />
+            <div className="space-y-3">
             {paraQuem.map((item, i) => (
               <motion.div
                 key={i}
@@ -367,6 +368,7 @@ export default function Formacao() {
                 <span className="text-sm font-medium text-navy/75 leading-snug">{item}</span>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
       </section>
