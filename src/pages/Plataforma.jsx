@@ -13,7 +13,7 @@ const channels = ['WhatsApp', 'WebApp', 'ChatApp', 'Página Pública', 'QR Code'
 const models = ['GPT-4o', 'Claude 3.5', 'Gemini 1.5', 'GPT-4o mini', 'Mistral', 'LLaMA 3', 'Claude Haiku', 'Gemini Flash'];
 
 const appTabs = [
-{ icon: Monitor, label: 'Meta Chat', desc: 'Conversas organizadas, histórico e contexto de cada agente em um ambiente limpo e funcional.', image: 'https://media.base44.com/images/public/6a31bcdad828457821b25dc5/2be7bd337_image.png' },
+{ icon: Monitor, label: 'Meta Chat', desc: 'Conversas organizadas, histórico e contexto de cada agente em um ambiente limpo e funcional.', image: 'https://media.base44.com/images/public/6a31bcdad828457821b25dc5/a510f5285_image.png' },
 { icon: Layers, label: 'Meta Contexto', desc: 'Base de conhecimento, documentos, regras e instruções que alimentam cada agente.', image: 'https://media.base44.com/images/public/6a31bcdad828457821b25dc5/4fdc80b16_image.png' },
 { icon: BarChart3, label: 'Meta Dados', desc: 'Métricas de uso, conversas, usuários e indicadores de desempenho dos agentes.' },
 { icon: Zap, label: 'Meta Análise', desc: 'Análise de conversas, qualidade de respostas e oportunidades de melhoria.' },
