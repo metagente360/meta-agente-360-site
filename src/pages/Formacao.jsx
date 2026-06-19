@@ -337,10 +337,10 @@ export default function Formacao() {
       <section className="py-20 bg-white overflow-hidden relative">
         {/* Imagem de fundo no lado direito — fade só à esquerda */}
         <div className="hidden lg:block absolute inset-y-0 right-0 w-[48%]">
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white to-transparent z-10" />
           <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&q=80"
-            alt="Profissional usando tecnologia para criar e inovar"
+            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/eedf9e44d_ChatGPTImage19dejunde202615_46_28.png"
+            alt="Profissional conectando conhecimento humano à inteligência artificial"
             className="w-full h-full object-cover"
           />
         </div>
