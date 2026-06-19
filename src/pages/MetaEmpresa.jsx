@@ -57,24 +57,24 @@ export default function MetaEmpresa() {
     <main>
       {/* HERO */}
       <section className="relative min-h-[100svh] flex items-center bg-navy overflow-hidden pt-16">
-        {/* Imagem de fundo full-width */}
-        <div className="absolute inset-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/60 to-navy/20 z-10" />
-          <img
-            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/94e7c49e4_ChatGPTImage19dejunde202616_31_12.png"
-            alt="Meta Empresa - Inteligência Agêntica"
-            className="absolute inset-0 w-full h-full object-contain object-right"
-          />
-        </div>
-
-        {/* Grid decorativo de fundo */}
-        <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 pointer-events-none">
           <div
-            className="absolute inset-0 opacity-[0.02]"
+            className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage: 'linear-gradient(rgba(33,107,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(33,107,255,0.4) 1px, transparent 1px)',
               backgroundSize: '40px 40px',
             }}
+          />
+          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-blue/8 rounded-full blur-[120px]" />
+        </div>
+
+        {/* Imagem lateral direita com fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/40 to-transparent z-10" />
+          <img
+            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/94e7c49e4_ChatGPTImage19dejunde202616_31_12.png"
+            alt="Meta Empresa - Inteligência Agêntica"
+            className="absolute inset-0 w-full h-full object-cover object-left"
           />
         </div>
 
