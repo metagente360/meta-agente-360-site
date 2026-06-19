@@ -68,34 +68,39 @@ export default function MetaEmpresa() {
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-blue/8 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 items-center">
-            {/* Texto */}
-            <div>
-              <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Empresa</motion.p>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-white leading-[1.1] tracking-tight mb-4">
-                Agentes de IA para empresas que precisam de mais{' '}
-                <span className="gradient-text">clareza, velocidade e controle.</span>
-              </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-white/60 text-[1.0625rem] leading-[1.7] mb-6 max-w-xl">
-                Leve inteligência agêntica para atendimento, operação, gestão, dados, relatórios, treinamento e processos internos.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.35 }}>
-                <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
-              </motion.div>
-            </div>
+        {/* Imagem lateral com fade */}
+        <div className="absolute right-0 top-16 bottom-0 w-[42%] lg:w-[44%] hidden lg:block">
+          <img
+            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0179fdfa8_ChatGPTImage19dejunde202616_53_52.png"
+            alt="Meta Empresa"
+            className="w-full h-full object-cover object-left"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)',
+            }}
+          />
+          {/* Overlay para suavizar a transição com o fundo navy */}
+          <div
+            className="absolute inset-y-0 left-0 w-32 lg:w-40"
+            style={{
+              background: 'linear-gradient(to right, #050A24 0%, transparent 100%)',
+            }}
+          />
+        </div>
 
-            {/* Imagem */}
-            <div className="hidden lg:flex justify-center items-center overflow-hidden">
-              <div className="relative" style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 100%)' }}>
-                <img
-                  src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0179fdfa8_ChatGPTImage19dejunde202616_53_52.png"
-                  alt="Meta Empresa"
-                  className="w-auto h-auto max-w-none"
-                  style={{ transform: 'scale(1.6)' }}
-                />
-              </div>
-            </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+          <div className="max-w-xl lg:max-w-[46%]">
+            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Empresa</motion.p>
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-white leading-[1.1] tracking-tight mb-4">
+              Agentes de IA para empresas que precisam de mais{' '}
+              <span className="gradient-text">clareza, velocidade e controle.</span>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-white/60 text-[1.0625rem] leading-[1.7] mb-6 max-w-xl">
+              Leve inteligência agêntica para atendimento, operação, gestão, dados, relatórios, treinamento e processos internos.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.35 }}>
+              <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
+            </motion.div>
           </div>
         </div>
       </section>
