@@ -67,19 +67,8 @@ export default function MetaEmpresa() {
           />
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-blue/8 rounded-full blur-[120px]" />
         </div>
-
-        {/* Imagem lateral direita com fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/40 to-transparent z-10" />
-          <img
-            src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/94e7c49e4_ChatGPTImage19dejunde202616_31_12.png"
-            alt="Meta Empresa - Inteligência Agêntica"
-            className="absolute inset-0 w-full h-full object-cover object-left"
-          />
-        </div>
-
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="max-w-xl lg:max-w-[50%]">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+          <div className="max-w-3xl">
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Empresa</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-white leading-[1.1] tracking-tight mb-4">
               Agentes de IA para empresas que precisam de mais{' '}
