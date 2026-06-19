@@ -366,20 +366,20 @@ export default function Home() {
       {/* ── HOW IT WORKS ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left — steps */}
             <div>
               <SectionHeader
                 eyebrow="Da ideia ao agente"
                 headline="Crie, publique, gerencie e evolua."
-                className="mb-10"
+                className="mb-6"
               />
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2">
                 {howSteps.map((step, i) => (
-                  <GlassCard key={i} delay={i * 0.08} className="p-4" hover={false}>
-                    <span className="text-xl font-heading font-bold text-brand-blue/20">{step.n}</span>
-                    <h3 className="font-heading text-sm font-semibold text-navy mt-2 mb-1">{step.title}</h3>
-                    <p className="text-xs text-navy/55 leading-relaxed">{step.body}</p>
+                  <GlassCard key={i} delay={i * 0.08} className="p-3" hover={false}>
+                    <span className="text-lg font-heading font-bold text-brand-blue/20">{step.n}</span>
+                    <h3 className="font-heading text-xs font-semibold text-navy mt-1.5 mb-0.5">{step.title}</h3>
+                    <p className="text-[11px] text-navy/55 leading-relaxed">{step.body}</p>
                   </GlassCard>
                 ))}
               </div>
@@ -400,7 +400,7 @@ export default function Home() {
                 <img
                   src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/1b04e61bf_asistente.png"
                   alt="Estúdio Meta Agente 360"
-                  className="relative w-full max-w-md lg:max-w-lg h-auto rounded-2xl shadow-xl shadow-navy/10"
+                  className="relative w-full max-w-md lg:max-w-xl h-auto rounded-2xl shadow-xl shadow-navy/10"
                 />
               </div>
             </motion.div>
