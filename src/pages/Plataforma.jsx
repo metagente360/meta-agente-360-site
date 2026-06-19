@@ -19,7 +19,7 @@ const appTabs = [
 { icon: Zap, label: 'Meta Análise', desc: 'Análise de conversas, qualidade de respostas e oportunidades de melhoria.' },
 { icon: Monitor, label: 'Dashboard', desc: 'Painel unificado com visão geral de todos os agentes, créditos e atividades.' },
 { icon: BookOpen, label: 'Biblioteca', desc: 'Coleção de prompts, templates, configurações e melhores práticas.' },
-{ icon: CreditCard, label: "Relat\xF3rio", desc: 'Controle de uso, saldo disponível, histórico de consumo e alertas.' }];
+{ icon: CreditCard, label: "Relat\xF3rio de Uso", desc: 'Controle de uso, saldo disponível, histórico de consumo e alertas.' }];
 
 
 const studioModes = [
