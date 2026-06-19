@@ -74,7 +74,6 @@ const pillars = [
 const included = [
   { icon: GraduationCap, label: 'Formação completa Arquiteto de IA Agêntica' },
   { icon: Star, label: 'Licença Meta Produtor por 12 meses' },
-  { icon: Zap, label: '10.000 créditos mensais na plataforma' },
   { icon: Users, label: 'Acesso à comunidade de Meta Produtores' },
   { icon: UserCheck, label: 'Módulos com especialistas de diferentes nichos' },
 ];
@@ -223,7 +222,7 @@ export default function Formacao() {
       </section>
 
       {/* O QUE ESTÁ INCLUÍDO */}
-      <section className="py-20 bg-brand-ice bg-blueprint-grid">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Incluso"
@@ -231,43 +230,97 @@ export default function Formacao() {
             align="center"
             className="max-w-xl mx-auto mb-12 text-center"
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {included.map((item, i) => (
+          <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-start max-w-5xl mx-auto">
+            {/* Coluna da esquerda: cards */}
+            <div className="space-y-4">
+              {/* Card destaque: créditos — ocupa largura total */}
               <motion.div
-                key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
+                transition={{ duration: 0.45 }}
               >
-                <GlassCard className="p-6 h-full group">
-                  <div className="flex flex-col items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex items-center justify-center group-hover:from-brand-blue/25 group-hover:to-brand-purple/25 transition-all duration-300">
-                      <item.icon className="w-6 h-6 text-brand-blue" strokeWidth={1.5} />
-                    </div>
-                    <p className="text-sm font-semibold text-navy leading-snug">{item.label}</p>
+                <div className="glass-card rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 overflow-hidden relative">
+                  <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-brand-blue to-brand-purple" />
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                </GlassCard>
+                  <div>
+                    <p className="text-sm font-bold text-brand-blue mb-0.5">10.000 créditos mensais</p>
+                    <p className="text-xs text-navy/55">na plataforma para você criar, testar e publicar seus agentes sem se preocupar com limites.</p>
+                  </div>
+                </div>
               </motion.div>
-            ))}
-          </div>
-          {/* Destaque central */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 max-w-3xl mx-auto"
-          >
-            <div className="glass-card rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left bg-gradient-to-r from-brand-blue/5 to-brand-purple/5">
-              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5 text-white" />
+              {/* Grid 2x2 com os demais cards */}
+              <div className="grid sm:grid-cols-2 gap-3">
+                {included.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.07 }}
+                  >
+                    <div className="glass-card rounded-xl p-4 h-full group hover:border-brand-blue/20 transition-all duration-300">
+                      <div className="flex items-start gap-3">
+                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center flex-shrink-0 group-hover:from-brand-blue/20 group-hover:to-brand-purple/20 transition-all duration-300">
+                          <item.icon className="w-4 h-4 text-brand-blue" strokeWidth={1.5} />
+                        </div>
+                        <p className="text-xs font-semibold text-navy leading-snug">{item.label}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <p className="text-sm font-medium text-navy">
-                <strong className="text-brand-blue">10.000 créditos mensais</strong> na plataforma para você criar, testar e publicar seus agentes sem se preocupar com limites.
-              </p>
             </div>
-          </motion.div>
+            {/* Coluna da direita: SVG decorativo */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:flex items-start justify-center pt-4"
+            >
+              <svg viewBox="0 0 280 380" className="w-full max-w-[280px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Círculo central — plataforma */}
+                <circle cx="140" cy="160" r="58" fill="url(#platGrad)" opacity="0.15" />
+                <circle cx="140" cy="160" r="44" fill="url(#platGrad)" opacity="0.25" />
+                <circle cx="140" cy="160" r="30" fill="white" stroke="url(#platStroke)" strokeWidth="1.5" />
+                {/* Ícone central: cérebro/agente */}
+                <path d="M140 148c-4 0-7 2-8 5h-6c0-6 6-11 14-11s14 5 14 11h-6c-1-3-4-5-8-5z" fill="#216BFF" />
+                <path d="M132 158c0-2 4-4 8-4s8 2 8 4v8c0 2-4 4-8 4s-8-2-8-4v-8z" fill="#8A3FFC" opacity="0.6" />
+                {/* Linhas conectando */}
+                <line x1="140" y1="202" x2="140" y2="240" stroke="url(#platStroke)" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="140" y1="80" x2="140" y2="118" stroke="url(#platStroke)" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="40" y1="160" x2="98" y2="160" stroke="url(#platStroke)" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="182" y1="160" x2="240" y2="160" stroke="url(#platStroke)" strokeWidth="1" strokeDasharray="4 4" />
+                {/* Nós ao redor */}
+                <rect x="114" y="248" width="52" height="32" rx="8" fill="white" stroke="#E6EAF2" strokeWidth="1" />
+                <text x="140" y="268" textAnchor="middle" fill="#216BFF" fontSize="10" fontWeight="600">Créditos</text>
+                <rect x="114" y="60" width="52" height="28" rx="8" fill="white" stroke="#E6EAF2" strokeWidth="1" />
+                <text x="140" y="78" textAnchor="middle" fill="#8A3FFC" fontSize="10" fontWeight="600">Agentes</text>
+                <rect x="10" y="146" width="60" height="28" rx="8" fill="white" stroke="#E6EAF2" strokeWidth="1" />
+                <text x="40" y="164" textAnchor="middle" fill="#216BFF" fontSize="10" fontWeight="600">Apps</text>
+                <rect x="210" y="146" width="60" height="28" rx="8" fill="white" stroke="#E6EAF2" strokeWidth="1" />
+                <text x="240" y="164" textAnchor="middle" fill="#8A3FFC" fontSize="10" fontWeight="600">Canais</text>
+                {/* Barras de dados decorativas */}
+                <rect x="252" y="210" width="6" height="20" rx="3" fill="#216BFF" opacity="0.3" />
+                <rect x="252" y="220" width="6" height="28" rx="3" fill="#8A3FFC" opacity="0.4" />
+                <rect x="252" y="215" width="6" height="24" rx="3" fill="#216BFF" opacity="0.5" />
+                {/* Gradientes */}
+                <defs>
+                  <linearGradient id="platGrad" x1="0" y1="0" x2="280" y2="380">
+                    <stop stopColor="#216BFF" />
+                    <stop offset="1" stopColor="#8A3FFC" />
+                  </linearGradient>
+                  <linearGradient id="platStroke" x1="0" y1="0" x2="280" y2="380">
+                    <stop stopColor="#216BFF" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#8A3FFC" stopOpacity="0.3" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </motion.div>
+          </div>
         </div>
       </section>
 
