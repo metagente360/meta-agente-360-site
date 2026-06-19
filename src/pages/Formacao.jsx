@@ -335,9 +335,9 @@ export default function Formacao() {
 
       {/* PARA QUEM É */}
       <section className="py-20 bg-white overflow-hidden relative">
-        {/* Imagem de fundo no lado direito — fade só à esquerda */}
-        <div className="hidden lg:block absolute inset-y-0 right-0 w-[48%]">
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white to-transparent z-10" />
+        {/* Imagem de fundo no lado esquerdo — fade à direita */}
+        <div className="hidden lg:block absolute inset-y-0 left-0 w-[48%]">
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-r from-transparent to-white z-10" />
           <img
             src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/eedf9e44d_ChatGPTImage19dejunde202615_46_28.png"
             alt="Profissional conectando conhecimento humano à inteligência artificial"
@@ -349,9 +349,9 @@ export default function Formacao() {
             eyebrow="Para quem é"
             headline="Para quem é essa formação."
             align="left"
-            className="max-w-xl mb-12"
+            className="max-w-xl mb-12 ml-auto"
           />
-          <div className="max-w-lg space-y-3">
+          <div className="max-w-lg ml-auto space-y-3">
             {paraQuem.map((item, i) => (
               <motion.div
                 key={i}
