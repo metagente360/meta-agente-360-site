@@ -56,7 +56,7 @@ export default function MetaEmpresa() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-center bg-navy overflow-hidden pt-16">
+      <section className="relative min-h-[100svh] flex bg-navy overflow-hidden pt-16">
         <div className="absolute inset-0 pointer-events-none">
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -68,9 +68,9 @@ export default function MetaEmpresa() {
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-brand-blue/8 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0 flex items-stretch">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch min-h-full w-full">
+            <div className="flex flex-col justify-center">
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Meta Empresa</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-white leading-[1.1] tracking-tight mb-4">
               Agentes de IA para empresas que precisam de mais{' '}
@@ -85,12 +85,12 @@ export default function MetaEmpresa() {
             </div>
 
             {/* Imagem lateral direita */}
-            <div className="hidden lg:flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/30 to-transparent z-10 rounded-r-2xl" />
+            <div className="hidden lg:block relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/25 to-transparent z-10" />
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/94e7c49e4_ChatGPTImage19dejunde202616_31_12.png"
                 alt="Meta Empresa - Inteligência Agêntica"
-                className="relative w-full h-auto max-h-[85vh] object-contain"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
           </div>
