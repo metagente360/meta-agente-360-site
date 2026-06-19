@@ -19,6 +19,14 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
+  const isDarkPage = location.pathname === '/meta-empresa';
+  const isTransparent = !scrolled;
+  const textColor = isTransparent && isDarkPage ? 'text-white/80' : 'text-navy/70';
+  const textHover = isTransparent && isDarkPage ? 'hover:text-white hover:bg-white/10' : 'hover:text-navy hover:bg-navy/5';
+  const activeClass = isTransparent && isDarkPage
+    ? 'text-white bg-white/15'
+    : 'text-brand-blue bg-brand-blue/8';
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -42,11 +50,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
-              <img
-                src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/515fa1360_logohorizontal-black.png"
-                alt="Meta Agente 360"
-                className="h-8 w-auto object-contain"
-              />
+             <img
+               src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/515fa1360_logohorizontal-black.png"
+               alt="Meta Agente 360"
+               className={`h-8 w-auto object-contain ${isTransparent && isDarkPage ? 'brightness-0 invert' : ''}`}
+             />
             </Link>
 
             {/* Desktop nav */}
@@ -57,8 +65,8 @@ export default function Navbar() {
                   to={link.href}
                   className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 ${
                     location.pathname === link.href
-                      ? 'text-brand-blue bg-brand-blue/8'
-                      : 'text-navy/70 hover:text-navy hover:bg-navy/5'
+                      ? activeClass
+                      : `${textColor} ${textHover}`
                   }`}
                 >
                   {link.label}
@@ -72,7 +80,7 @@ export default function Navbar() {
                 href="https://app.metaagente360.com.br"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-xs font-medium text-navy/70 hover:text-navy transition-colors duration-200"
+                className={`px-4 py-2 text-xs font-medium transition-colors duration-200 ${isTransparent && isDarkPage ? 'text-white/70 hover:text-white' : 'text-navy/70 hover:text-navy'}`}
               >
                 Login
               </a>
@@ -86,7 +94,7 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden p-2 rounded-lg text-navy/70 hover:text-navy hover:bg-navy/5 transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center"
+              className={`lg:hidden p-2 rounded-lg transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${isTransparent && isDarkPage ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-navy/70 hover:text-navy hover:bg-navy/5'}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
             >
