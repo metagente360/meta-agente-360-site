@@ -156,11 +156,16 @@ export default function MetaEmpresa() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
             >
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0a8f012d5_img5.png"
                 alt="Board de Agentes - Arquitetura de IA"
                 className="w-full h-auto"
+                style={{
+                  maskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 60%, transparent 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at 50% 50%, black 60%, transparent 100%)',
+                }}
               />
             </motion.div>
           </div>
