@@ -166,7 +166,12 @@ export default function MetaEmpresa() {
       <section className="relative py-20 bg-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <SectionHeader eyebrow="Board de Agentes" headline="Vários agentes trabalhando como uma arquitetura." body="Um Board de Agentes conecta agentes especializados em diferentes funções, coordenados por um agente gestor central." dark />
+            <div>
+              <SectionHeader eyebrow="Board de Agentes" headline="Vários agentes trabalhando como uma arquitetura." body="Um Board de Agentes conecta agentes especializados em diferentes funções, coordenados por um agente gestor central." dark />
+              <div className="mt-8">
+                <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
+              </div>
+            </div>
 
             {/* Board image */}
             <motion.div
@@ -187,9 +192,7 @@ export default function MetaEmpresa() {
               
             </motion.div>
           </div>
-          <div className="mt-12 text-center">
-            <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
-          </div>
+
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import {
   Brain, Building2, Users, Layers,
   BarChart3, Smartphone, Zap, ChevronRight,
   BookOpen, Star, Globe, Newspaper,
-  Play, Pause, Lock, Server, Search, Clock
+  Play, Lock, Server, Search, Clock
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -134,21 +134,13 @@ function VideoPlayer() {
           </div>
         </>
       ) : (
-        <>
-          <iframe
-            src="https://drive.google.com/file/d/1j3sg6XqfpCNM6hSKknjqE-oxGbhFx5Iv/preview"
-            className="absolute inset-0 w-full h-full"
-            allow="autoplay"
-            allowFullScreen
-            title="Vídeo Institucional Meta Agente 360"
-          />
-          <button
-            onClick={() => setPlaying(false)}
-            className="absolute top-3 right-3 z-30 w-9 h-9 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center transition-colors"
-          >
-            <Pause className="w-4 h-4 text-white" />
-          </button>
-        </>
+        <iframe
+          src="https://drive.google.com/file/d/1j3sg6XqfpCNM6hSKknjqE-oxGbhFx5Iv/preview"
+          className="absolute inset-0 w-full h-full"
+          allow="autoplay"
+          allowFullScreen
+          title="Vídeo Institucional Meta Agente 360"
+        />
       )}
     </div>
   );
