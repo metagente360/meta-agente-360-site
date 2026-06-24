@@ -5,7 +5,6 @@ import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SecondaryButton from '../components/ui/SecondaryButton';
 import SectionHeader from '../components/ui/SectionHeader';
-import FAQAccordion from '../components/ui/FAQAccordion';
 
 const pillars = [
   {
@@ -130,7 +129,7 @@ export default function Formacao() {
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/fad44e70e_formao.png"
                 alt="Formação Arquiteto de IA Agêntica"
-                className="w-full max-w-[560px] object-contain scale-150"
+                className="w-full max-w-[560px] object-contain scale-[1.4]"
               />
             </motion.div>
           </div>
@@ -427,18 +426,6 @@ export default function Formacao() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-brand-ice">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Dúvidas"
-            headline="Perguntas frequentes sobre a Formação."
-            align="center"
-            className="max-w-xl mx-auto mb-10 text-center"
-          />
-          <FAQAccordion />
-        </div>
-      </section>
     </main>
   );
 }

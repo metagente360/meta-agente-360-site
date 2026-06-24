@@ -28,8 +28,8 @@ function TagPill({ label, dark = false }) {
 }
 
 export default function MarqueeStrip({ items = defaultItems, items2 = defaultItems2, dark = false, className = '' }) {
-  const doubled = [...items, ...items];
-  const doubled2 = [...items2, ...items2];
+  const doubled = [...items, ...items, ...items];
+  const doubled2 = [...items2, ...items2, ...items2];
 
   return (
     <div className={cn('overflow-hidden space-y-3', className)}>

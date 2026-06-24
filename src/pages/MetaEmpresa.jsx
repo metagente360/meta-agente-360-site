@@ -64,7 +64,7 @@ export default function MetaEmpresa() {
           <img
             src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0179fdfa8_ChatGPTImage19dejunde202616_53_52.png"
             alt="Meta Empresa"
-            className="w-full h-full object-contain scale-110"
+            className="w-full h-full object-contain scale-[1.4]"
             style={{
               maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)',
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%)'
@@ -144,6 +144,38 @@ export default function MetaEmpresa() {
         </div>
       </section>
 
+      {/* CTA DIAGNÓSTICO */}
+      <section className="py-16 bg-brand-ice">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="font-heading text-[1.75rem] sm:text-[2rem] font-semibold text-navy leading-[1.2] tracking-tight mb-4"
+          >
+            Pronto para levar inteligência agêntica para sua empresa?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-navy/60 text-base mb-8"
+          >
+            Solicite um diagnóstico gratuito e descubra quais processos da sua empresa podem ser automatizados com agentes de IA.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
+          </motion.div>
+        </div>
+      </section>
+
       {/* BOARD DE AGENTES */}
       <section className="relative py-20 bg-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,6 +200,9 @@ export default function MetaEmpresa() {
               }} />
               
             </motion.div>
+          </div>
+          <div className="mt-12 text-center">
+            <GradientButton to="/contato" size="lg">Solicitar Diagnóstico</GradientButton>
           </div>
         </div>
       </section>

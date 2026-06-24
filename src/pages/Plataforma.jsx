@@ -248,7 +248,7 @@ export default function Plataforma() {
               </button>
             )}
           </div>
-          <motion.div key={activeTab} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto min-h-[420px]">
             {activeTab === 0 &&
             <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/2be7bd337_image.png"
             alt="Meta Chat - Meta Agente 360"
@@ -284,7 +284,7 @@ export default function Plataforma() {
             alt="Créditos - Meta Agente 360"
             className="w-full h-auto rounded-2xl shadow-xl shadow-navy/10" />
             }
-          </motion.div>
+          </div>
         </div>
       </section>
 
