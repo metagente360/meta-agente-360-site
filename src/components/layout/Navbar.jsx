@@ -77,7 +77,7 @@ export default function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="https://app.metaagente360.com.br"
+                href="https://metagente.com.br/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`px-4 py-2 text-xs font-medium transition-colors duration-200 ${isTransparent && isDarkPage ? 'text-white/70 hover:text-white' : 'text-navy/70 hover:text-navy'}`}
@@ -130,7 +130,7 @@ export default function Navbar() {
               ))}
               <div className="flex flex-col gap-2 pt-3 border-t border-brand-grey mt-2">
                 <a
-                  href="https://app.metaagente360.com.br"
+                  href="https://metagente.com.br/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-3 text-sm font-medium text-center text-navy/70 border border-brand-grey rounded-xl min-h-[48px] flex items-center justify-center"
