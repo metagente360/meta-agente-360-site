@@ -7,90 +7,90 @@ import SecondaryButton from '../components/ui/SecondaryButton';
 import SectionHeader from '../components/ui/SectionHeader';
 
 const pillars = [
-  {
-    n: 'PILAR 1',
-    title: 'Fundamentos de IA',
-    subtitle: 'Domine a base técnica',
-    color: 'from-brand-blue/15 to-brand-blue/5',
-    accent: 'text-brand-blue',
-    badgeBg: 'bg-brand-blue',
-    items: [
-      'O que é IA, LLMs e modelos de linguagem',
-      'Como funciona uma base de conhecimento e RAG',
-      'O que é um prompt, entrada, saída e formatação',
-      'Arquitetura de agentes e pensamento profundo',
-      'Como escolher o modelo certo para cada situação',
-    ],
-  },
-  {
-    n: 'PILAR 2',
-    title: 'Mentalidade Agêntica',
-    subtitle: 'Pense como arquiteto',
-    color: 'from-brand-purple/15 to-brand-purple/5',
-    accent: 'text-brand-purple',
-    badgeBg: 'bg-brand-purple',
-    items: [
-      'Como pegar um processo físico e digitalizar para IA',
-      'Estrutura de entrada, processamento e saída de um agente',
-      'Como criar agentes com o seu conhecimento e especialidade',
-      'Como pensar em resultado antes de pensar em ferramenta',
-      'Como estruturar processos automáticos do zero ao fim',
-    ],
-  },
-  {
-    n: 'PILAR 3',
-    title: 'Meta Agente 360 na Prática',
-    subtitle: 'Mão na massa',
-    color: 'from-brand-blue/15 to-brand-purple/10',
-    accent: 'gradient-text',
-    badgeBg: 'bg-gradient-to-r from-brand-blue to-brand-purple',
-    items: [
-      'Como criar e configurar um agente do zero',
-      'Integrações de processo, formulários e SDR',
-      'Como fazer seu próprio app agêntico',
-      'Como conversar com seus dados e fontes externas',
-      'Como criar uma base de conhecimento para seus usuários',
-      'Configurações avançadas, automações e fluxos completos',
-    ],
-  },
-  {
-    n: 'PILAR 4',
-    title: 'Monetização',
-    subtitle: 'Transforme em receita',
-    color: 'from-brand-purple/15 to-brand-blue/5',
-    accent: 'text-brand-purple',
-    badgeBg: 'bg-brand-purple',
-    items: [
-      'O que é um micro-SaaS e como criar o seu',
-      'Como precificar, vender e entregar agentes para clientes',
-      'Integração com Hotmart, Monetizze e plataformas de pagamento',
-      'Como se posicionar como consultor de IA Agêntica',
-      'Como vender para empresas, autônomos e nichos específicos',
-    ],
-  },
-];
+{
+  n: 'PILAR 1',
+  title: 'Fundamentos de IA',
+  subtitle: 'Domine a base técnica',
+  color: 'from-brand-blue/15 to-brand-blue/5',
+  accent: 'text-brand-blue',
+  badgeBg: 'bg-brand-blue',
+  items: [
+  'O que é IA, LLMs e modelos de linguagem',
+  'Como funciona uma base de conhecimento e RAG',
+  'O que é um prompt, entrada, saída e formatação',
+  'Arquitetura de agentes e pensamento profundo',
+  'Como escolher o modelo certo para cada situação']
+
+},
+{
+  n: 'PILAR 2',
+  title: 'Mentalidade Agêntica',
+  subtitle: 'Pense como arquiteto',
+  color: 'from-brand-purple/15 to-brand-purple/5',
+  accent: 'text-brand-purple',
+  badgeBg: 'bg-brand-purple',
+  items: [
+  'Como pegar um processo físico e digitalizar para IA',
+  'Estrutura de entrada, processamento e saída de um agente',
+  'Como criar agentes com o seu conhecimento e especialidade',
+  'Como pensar em resultado antes de pensar em ferramenta',
+  'Como estruturar processos automáticos do zero ao fim']
+
+},
+{
+  n: 'PILAR 3',
+  title: 'Meta Agente 360 na Prática',
+  subtitle: 'Mão na massa',
+  color: 'from-brand-blue/15 to-brand-purple/10',
+  accent: 'gradient-text',
+  badgeBg: 'bg-gradient-to-r from-brand-blue to-brand-purple',
+  items: [
+  'Como criar e configurar um agente do zero',
+  'Integrações de processo, formulários e SDR',
+  'Como fazer seu próprio app agêntico',
+  'Como conversar com seus dados e fontes externas',
+  'Como criar uma base de conhecimento para seus usuários',
+  'Configurações avançadas, automações e fluxos completos']
+
+},
+{
+  n: 'PILAR 4',
+  title: 'Monetização',
+  subtitle: 'Transforme em receita',
+  color: 'from-brand-purple/15 to-brand-blue/5',
+  accent: 'text-brand-purple',
+  badgeBg: 'bg-brand-purple',
+  items: [
+  'O que é um micro-SaaS e como criar o seu',
+  'Como precificar, vender e entregar agentes para clientes',
+  'Integração com Hotmart, Monetizze e plataformas de pagamento',
+  'Como se posicionar como consultor de IA Agêntica',
+  'Como vender para empresas, autônomos e nichos específicos']
+
+}];
+
 
 const included = [
-  { icon: GraduationCap, label: 'Formação completa Arquiteto de IA Agêntica' },
-  { icon: Star, label: 'Licença Meta Produtor por 12 meses' },
-  { icon: Zap, label: '10.000 créditos mensais na plataforma' },
-  { icon: Users, label: 'Acesso à comunidade de Meta Produtores' },
-  { icon: UserCheck, label: 'Módulos com especialistas de diferentes nichos' },
-];
+{ icon: GraduationCap, label: 'Formação completa Arquiteto de IA Agêntica' },
+{ icon: Star, label: 'Licença Meta Produtor por 12 meses' },
+{ icon: Zap, label: '10.000 créditos mensais na plataforma' },
+{ icon: Users, label: 'Acesso à comunidade de Meta Produtores' },
+{ icon: UserCheck, label: 'Módulos com especialistas de diferentes nichos' }];
+
 
 const paraQuem = [
-  'Você tem conhecimento ou especialidade em alguma área',
-  'Quer criar soluções com IA sem depender de programador',
-  'Quer monetizar o que sabe sem limite de horas trabalhadas',
-  'Quer entrar no mercado de IA com base sólida e método',
-];
+'Você tem conhecimento ou especialidade em alguma área',
+'Quer criar soluções com IA sem depender de programador',
+'Quer monetizar o que sabe sem limite de horas trabalhadas',
+'Quer entrar no mercado de IA com base sólida e método'];
+
 
 const trustBadges = [
-  { icon: Shield, label: 'Método validado no ecossistema Meta Agente 360' },
-  { icon: Users, label: 'Comunidade ativa de Meta Produtores' },
-  { icon: Calendar, label: 'Aprenda na prática em 90 dias' },
-  { icon: Rocket, label: 'Comece a monetizar com agentes de IA' },
-];
+{ icon: Shield, label: 'Método validado no ecossistema Meta Agente 360' },
+{ icon: Users, label: 'Comunidade ativa de Meta Produtores' },
+{ icon: Calendar, label: 'Aprenda na prática em 90 dias' },
+{ icon: Rocket, label: 'Comece a monetizar com agentes de IA' }];
+
 
 export default function Formacao() {
   const [activePillar, setActivePillar] = useState(null);
@@ -104,7 +104,7 @@ export default function Formacao() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="pr-2">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Formação Meta Produtor</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-3">
                 Monetize o que<br />você já sabe.
@@ -124,13 +124,13 @@ export default function Formacao() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center"
-            >
+              className="hidden lg:flex items-center justify-center">
+              
               <img
                 src="https://media.base44.com/images/public/6a3057094f64de9f1f72d897/fad44e70e_formao.png"
                 alt="Formação Arquiteto de IA Agêntica"
-                className="w-full max-w-[560px] object-contain scale-[1.6]"
-              />
+                className="w-full max-w-[560px] object-contain scale-[1.6]" />
+              
             </motion.div>
           </div>
         </div>
@@ -146,21 +146,21 @@ export default function Formacao() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center justify-center"
-            >
+              className="flex items-center justify-center">
+              
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/37a87d515_img2.png"
                 alt="Arquitetura de IA Agêntica — hub de inteligência com agentes conectados"
-                className="w-[80%] max-w-[384px] object-contain"
-              />
+                className="w-[80%] max-w-[384px] object-contain" />
+              
             </motion.div>
             {/* Caixa de texto à direita */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            >
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}>
+              
               <div className="glass-card rounded-2xl p-6 sm:p-10">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-purple/15 to-brand-purple/5 flex items-center justify-center flex-shrink-0">
@@ -187,17 +187,17 @@ export default function Formacao() {
             headline="Quatro pilares que nenhuma formação de IA ensina juntos."
             body="Domine os fundamentos, a mentalidade, a prática e a monetização para criar agentes inteligentes e transformar conhecimento em receita."
             align="center"
-            className="max-w-2xl mx-auto mb-12 text-center"
-          />
+            className="max-w-2xl mx-auto mb-12 text-center" />
+          
           <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {pillars.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
+            {pillars.map((p, i) =>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}>
+              
                 <GlassCard className="p-6 h-full">
                   <span className={`inline-block text-[0.65rem] font-bold tracking-widest uppercase ${p.badgeBg} text-white px-3 py-1 rounded-full mb-4`}>
                     {p.n}
@@ -205,18 +205,18 @@ export default function Formacao() {
                   <h3 className="font-heading text-lg font-semibold text-navy mb-1">{p.title}</h3>
                   <p className="text-sm text-brand-purple/60 italic mb-5">{p.subtitle}</p>
                   <ul className="space-y-2.5">
-                    {p.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2.5">
+                    {p.items.map((item, j) =>
+                  <li key={j} className="flex items-start gap-2.5">
                         <div className="w-4 h-4 rounded-full bg-brand-blue/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5 text-brand-blue" strokeWidth={3} />
                         </div>
                         <span className="text-sm text-navy/70 leading-relaxed">{item}</span>
                       </li>
-                    ))}
+                  )}
                   </ul>
                 </GlassCard>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -228,8 +228,8 @@ export default function Formacao() {
             eyebrow="Incluso"
             headline="O que está incluído na formação."
             align="center"
-            className="max-w-xl mx-auto mb-12 text-center"
-          />
+            className="max-w-xl mx-auto mb-12 text-center" />
+          
           <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-10 items-center">
             {/* Cards à esquerda */}
             <div>
@@ -240,8 +240,8 @@ export default function Formacao() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45 }}
-                  className="sm:col-span-2"
-                >
+                  className="sm:col-span-2">
+                  
                   <div className="glass-card rounded-2xl p-5 sm:p-6 bg-gradient-to-r from-brand-blue/5 to-brand-purple/5 border-brand-blue/20">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-2xl bg-brand-blue flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-blue/20">
@@ -255,14 +255,14 @@ export default function Formacao() {
                   </div>
                 </motion.div>
                 {/* Demais cards */}
-                {included.filter((_, i) => i !== 2).map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: (i + 1) * 0.08 }}
-                  >
+                {included.filter((_, i) => i !== 2).map((item, i) =>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: (i + 1) * 0.08 }}>
+                  
                     <GlassCard className="p-5 h-full group">
                       <div className="flex items-start gap-3">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 flex items-center justify-center flex-shrink-0 group-hover:from-brand-blue/20 group-hover:to-brand-purple/20 transition-all duration-300">
@@ -272,7 +272,7 @@ export default function Formacao() {
                       </div>
                     </GlassCard>
                   </motion.div>
-                ))}
+                )}
               </div>
             </div>
             {/* Imagem à direita */}
@@ -281,13 +281,13 @@ export default function Formacao() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center"
-            >
+              className="hidden lg:flex items-center justify-center">
+              
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/d2cc9aed8_img3.png"
                 alt="Ecossistema de créditos e benefícios da formação"
-                className="w-full max-w-[380px] object-contain"
-              />
+                className="w-full max-w-[380px] object-contain" />
+              
             </motion.div>
           </div>
         </div>
@@ -300,15 +300,15 @@ export default function Formacao() {
             eyebrow="Investimento"
             headline="Invista no seu futuro como Arquiteto de IA."
             align="center"
-            className="max-w-xl mx-auto mb-10 text-center"
-          />
+            className="max-w-xl mx-auto mb-10 text-center" />
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-md mx-auto"
-          >
+            className="max-w-md mx-auto">
+            
             <GlassCard className="p-8 text-center overflow-hidden relative">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue" />
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-purple/15 to-brand-blue/10 flex items-center justify-center mx-auto mb-5">
@@ -340,8 +340,8 @@ export default function Formacao() {
           <img
             src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/eedf9e44d_ChatGPTImage19dejunde202615_46_28.png"
             alt="Profissional conectando conhecimento humano à inteligência artificial"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" />
+          
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-lg ml-auto">
@@ -349,24 +349,24 @@ export default function Formacao() {
               eyebrow="Para quem é"
               headline="Para quem é essa formação."
               align="left"
-              className="mb-10"
-            />
+              className="mb-10" />
+            
             <div className="space-y-3">
-            {paraQuem.map((item, i) => (
+            {paraQuem.map((item, i) =>
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="glass-card rounded-xl p-4 flex items-center gap-4 group hover:border-brand-blue/20 transition-all duration-300"
-              >
+                className="glass-card rounded-xl p-4 flex items-center gap-4 group hover:border-brand-blue/20 transition-all duration-300">
+                
                 <div className="w-8 h-8 rounded-lg bg-brand-blue/8 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-blue/15 transition-colors duration-300">
                   <Check className="w-4 h-4 text-brand-blue" strokeWidth={2.5} />
                 </div>
                 <span className="text-sm font-medium text-navy/75 leading-snug">{item}</span>
               </motion.div>
-            ))}
+              )}
             </div>
           </div>
         </div>
@@ -376,21 +376,21 @@ export default function Formacao() {
       <section className="py-16 bg-brand-lavender/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {trustBadges.map((badge, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="flex flex-col items-center text-center gap-3 p-5"
-              >
+            {trustBadges.map((badge, i) =>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              className="flex flex-col items-center text-center gap-3 p-5">
+              
                 <div className="w-12 h-12 rounded-2xl bg-white shadow-sm shadow-navy/4 flex items-center justify-center">
                   <badge.icon className="w-6 h-6 text-brand-blue" strokeWidth={1.5} />
                 </div>
                 <p className="text-xs font-semibold text-navy/70 max-w-[180px]">{badge.label}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -403,8 +403,8 @@ export default function Formacao() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-heading text-xl sm:text-2xl font-semibold text-white mb-6"
-          >
+            className="font-heading text-xl sm:text-2xl font-semibold text-white mb-6">
+            
             Seu conhecimento é único.<br />Transforme em impacto. Transforme em renda.
           </motion.p>
           <motion.div
@@ -412,8 +412,8 @@ export default function Formacao() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="glass-card-dark rounded-2xl p-6 sm:p-8 max-w-lg mx-auto"
-          >
+            className="glass-card-dark rounded-2xl p-6 sm:p-8 max-w-lg mx-auto">
+            
             <div className="flex items-center justify-center gap-2 mb-4">
               <Megaphone className="w-5 h-5 text-brand-blue" />
               <p className="text-white/90 font-semibold text-sm">Garanta sua vaga agora</p>
@@ -426,6 +426,6 @@ export default function Formacao() {
         </div>
       </section>
 
-    </main>
-  );
+    </main>);
+
 }
