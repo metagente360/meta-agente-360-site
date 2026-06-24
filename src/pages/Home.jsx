@@ -362,18 +362,18 @@ export default function Home() {
               />
               <div className="space-y-2">
                 {/* Primeiro passo — largura total */}
-                <GlassCard delay={0} className="p-2.5" hover={false}>
+                <GlassCard delay={0} className="p-4" hover={false}>
                   <span className="text-base font-heading font-bold text-brand-blue/20">{howSteps[0].n}</span>
-                  <h3 className="font-heading text-[11px] font-semibold text-navy mt-1 mb-0.5">{howSteps[0].title}</h3>
-                  <p className="text-[10px] text-navy/55 leading-snug">{howSteps[0].body}</p>
+                  <h3 className="font-heading text-sm font-semibold text-navy mt-1 mb-1">{howSteps[0].title}</h3>
+                  <p className="text-sm text-navy/55 leading-relaxed">{howSteps[0].body}</p>
                 </GlassCard>
                 {/* Demais passos — grid 2x2 */}
                 <div className="grid grid-cols-2 gap-2">
                   {howSteps.slice(1).map((step, i) => (
-                    <GlassCard key={i} delay={(i + 1) * 0.08} className="p-2.5" hover={false}>
+                    <GlassCard key={i} delay={(i + 1) * 0.08} className="p-4" hover={false}>
                       <span className="text-base font-heading font-bold text-brand-blue/20">{step.n}</span>
-                      <h3 className="font-heading text-[11px] font-semibold text-navy mt-1 mb-0.5">{step.title}</h3>
-                      <p className="text-[10px] text-navy/55 leading-snug">{step.body}</p>
+                      <h3 className="font-heading text-sm font-semibold text-navy mt-1 mb-1">{step.title}</h3>
+                      <p className="text-sm text-navy/55 leading-relaxed">{step.body}</p>
                     </GlassCard>
                   ))}
                   </div>
