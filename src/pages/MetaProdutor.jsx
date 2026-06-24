@@ -60,7 +60,7 @@ export default function MetaProdutor() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/190dce66e_img4.png"
                 alt="Meta Produtor — ecossistema de IA"
-                className="w-full max-w-[560px] object-contain scale-[1.4]" />
+                className="w-full max-w-[560px] object-contain scale-[1.6]" />
               
             </motion.div>
           </div>
