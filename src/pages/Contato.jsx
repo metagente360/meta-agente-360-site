@@ -97,12 +97,12 @@ export default function Contato() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="hidden lg:flex items-center justify-center overflow-hidden"
+              className="hidden lg:flex items-center justify-center"
             >
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/c60d9df39_imgherocontato.png"
                 alt="Contato Meta Agente 360"
-                className="w-full max-w-[560px] object-contain scale-[1.5]"
+                className="w-full max-w-[560px] object-contain scale-[1.3]"
               />
             </motion.div>
           </div>
