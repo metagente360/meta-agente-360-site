@@ -73,7 +73,7 @@ export default function Solucoes() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/cd1beea73_imgherosolues.png"
                 alt="Soluções de IA"
-                className="w-full max-w-[560px] object-contain scale-[1.5]" />
+                className="w-full max-w-[560px] object-contain scale-[1.3]" />
             </motion.div>
           </div>
         </div>
