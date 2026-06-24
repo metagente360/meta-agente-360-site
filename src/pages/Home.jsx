@@ -1,11 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Brain, Building2, Users, Layers,
   BarChart3, Smartphone, Zap, ChevronRight,
   BookOpen, Star, Globe, Newspaper,
-  Play, X, Lock, Server, Search, Clock
+  Play, Pause, Lock, Server, Search, Clock
 } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
@@ -111,59 +111,46 @@ const cases = [
   },
 ];
 
-function VideoThumbnail() {
-  const openModal = () => {
-    const dialog = document.getElementById('video-modal');
-    if (dialog) dialog.showModal();
-  };
-  return (
-    <div
-      onClick={openModal}
-      className="relative w-full cursor-pointer group rounded-2xl overflow-hidden shadow-lg"
-      style={{ aspectRatio: '16/9', borderRadius: 16 }}
-    >
-      <img
-        src="https://img.youtube.com/vi/dkEzqtUkZzc/maxresdefault.jpg"
-        alt="Vídeo Institucional Meta Agente 360"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-navy/40 z-10 transition-opacity group-hover:bg-navy/25" />
-      <div className="absolute inset-0 flex items-center justify-center z-20">
-        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-          <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
-        </div>
-      </div>
-    </div>
-  );
-}
+function VideoPlayer() {
+  const [playing, setPlaying] = useState(false);
 
-function VideoModal() {
   return (
-    <dialog
-      id="video-modal"
-      className="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-0"
-      style={{ background: 'rgba(5,10,26,0.96)' }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) e.currentTarget.close();
-      }}
-    >
-      <div className="relative w-full h-full flex items-center justify-center p-4">
-        <button
-          onClick={() => document.getElementById('video-modal')?.close()}
-          className="absolute top-6 right-6 z-30 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-        >
-          <X className="w-5 h-5 text-white" />
-        </button>
-        <iframe
-          src="https://drive.google.com/file/d/1j3sg6XqfpCNM6hSKknjqE-oxGbhFx5Iv/preview"
-          className="rounded-2xl"
-          style={{ width: '80vw', maxWidth: 900, aspectRatio: '16/9' }}
-          allow="autoplay"
-          allowFullScreen
-          title="Vídeo Institucional Meta Agente 360"
-        />
-      </div>
-    </dialog>
+    <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: '16/9' }}>
+      {!playing ? (
+        <>
+          <img
+            src="https://img.youtube.com/vi/dkEzqtUkZzc/maxresdefault.jpg"
+            alt="Vídeo Institucional Meta Agente 360"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/40 z-10" />
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <button
+              onClick={() => setPlaying(true)}
+              className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300"
+            >
+              <Play className="w-6 h-6 text-[#1B3FBF] ml-1" fill="#1B3FBF" />
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <iframe
+            src="https://drive.google.com/file/d/1j3sg6XqfpCNM6hSKknjqE-oxGbhFx5Iv/preview"
+            className="absolute inset-0 w-full h-full"
+            allow="autoplay"
+            allowFullScreen
+            title="Vídeo Institucional Meta Agente 360"
+          />
+          <button
+            onClick={() => setPlaying(false)}
+            className="absolute top-3 right-3 z-30 w-9 h-9 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center transition-colors"
+          >
+            <Pause className="w-4 h-4 text-white" />
+          </button>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -306,8 +293,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <VideoThumbnail />
-              <VideoModal />
+              <VideoPlayer />
             </motion.div>
           </div>
         </div>
