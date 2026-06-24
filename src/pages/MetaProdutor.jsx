@@ -55,7 +55,7 @@ export default function MetaProdutor() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:flex items-center justify-center absolute inset-0 left-auto w-[55%] pointer-events-none z-0">
+              className="hidden lg:flex items-center justify-center absolute inset-0 left-auto w-[55%] pointer-events-none z-30">
               
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/190dce66e_img4.png"
