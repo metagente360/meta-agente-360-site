@@ -104,7 +104,7 @@ export default function Formacao() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="pr-2">
+            <div className="pr-40">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="eyebrow text-brand-blue mb-4">Formação Meta Produtor</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading text-[2.25rem] sm:text-[2.75rem] font-semibold text-navy leading-[1.1] tracking-tight mb-3">
                 Monetize o que<br />você já sabe.
