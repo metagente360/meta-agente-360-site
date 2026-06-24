@@ -46,7 +46,7 @@ export default function Sobre() {
               <img
                 src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/a44918497_imgherosobre.png"
                 alt="Sobre"
-                className="w-full max-w-[560px] object-contain scale-[1.5]" />
+                className="w-full max-w-[560px] object-contain scale-[1.8]" />
             </motion.div>
           </div>
         </div>
