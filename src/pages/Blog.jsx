@@ -39,10 +39,10 @@ export default function Blog() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="hidden lg:flex items-center justify-center">
-              <img
-                src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/6bc1d6427_imgheroblog.png"
-                alt="Blog"
-                className="w-full max-w-[560px] object-contain scale-[1.3]" />
+              <img src="https://media.base44.com/images/public/6a31bcdad828457821b25dc5/0387d0765_img_hero_blog.png"
+
+              alt="Blog"
+              className="w-full max-w-[560px] object-contain scale-[1.3]" />
             </motion.div>
           </div>
         </div>
@@ -53,14 +53,14 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Artigos" headline="Perspectivas de quem está construindo." align="center" className="max-w-xl mx-auto mb-14 text-center" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {postsWithSlug.map((post, i) => (
-              <GlassCard key={i} delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col">
+            {postsWithSlug.map((post, i) =>
+            <GlassCard key={i} delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col">
                 <div className="relative h-40 overflow-hidden">
                   <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover" />
+                
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                 </div>
                 <div className="p-6 relative z-10 flex flex-col flex-1">
@@ -85,12 +85,12 @@ export default function Blog() {
                   </div>
                 </div>
               </GlassCard>
-            ))}
+            )}
           </div>
         </div>
       </section>
 
       <CTASection eyebrow="É especialista?" headline="Compartilhe seu conhecimento com o ecossistema." body="Se você é Meta Produtor ou especialista em IA agêntica, publique suas experiências e alcance uma audiência qualificada." primaryLabel="Quero Escrever" primaryTo="/contato" secondaryLabel="Conhecer Ecossistema" secondaryTo="/ecossistema" />
-    </main>
-  );
+    </main>);
+
 }
