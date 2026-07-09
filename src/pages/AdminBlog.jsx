@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Edit2, Trash2, Eye, EyeOff, ArrowLeft, Upload, X, Save, FileText } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import ContentEditor from '@/components/admin/ContentEditor';
 
 const ACCENT_OPTIONS = [
   { label: 'Azul', value: 'text-brand-blue' },
@@ -319,17 +320,7 @@ export default function AdminBlog() {
           </div>
 
           {/* Conteúdo */}
-          <div className="bg-white rounded-2xl border border-navy/8 p-6">
-            <h2 className="font-heading text-sm font-semibold text-navy mb-4">Conteúdo do Artigo (Markdown)</h2>
-            <textarea
-              rows={24}
-              value={form.content}
-              onChange={e => setForm(f => ({ ...f, content: e.target.value }))}
-              placeholder={`## Título da seção\n\nEscreva o conteúdo em Markdown...\n\n**Negrito**, *itálico*, listas, links e mais.\n\n- Item 1\n- Item 2`}
-              className="w-full px-4 py-3 rounded-xl border border-navy/12 text-sm text-navy placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 resize-none font-mono leading-relaxed"
-            />
-            <p className="text-xs text-navy/40 mt-2">Suporte a Markdown: **negrito**, *itálico*, ## títulos, - listas, [links](url)</p>
-          </div>
+          <ContentEditor content={form.content} onChange={val => setForm(f => ({ ...f, content: val }))} />
 
           {/* Ações finais */}
           <div className="flex justify-end gap-3 pb-8">
