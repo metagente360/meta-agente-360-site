@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { PenLine, ArrowRight } from 'lucide-react';
@@ -5,12 +6,16 @@ import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import CTASection from '../components/ui/CTASection';
-import blogPosts from '../data/blogPosts';
-
-const posts = blogPosts.map(({ slug, content, ...rest }) => rest);
-const postsWithSlug = blogPosts;
+import { base44 } from '@/api/base44Client';
 
 export default function Blog() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    base44.entities.BlogPost.filter({ status: 'published' }, '-created_date', 50)
+      .then(data => { setPosts(data); setLoading(false); });
+  }, []);
   return (
     <main>
       {/* HERO */}
@@ -52,8 +57,18 @@ export default function Blog() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Artigos" headline="Perspectivas de quem está construindo." align="center" className="max-w-xl mx-auto mb-14 text-center" />
+          {loading && (
+            <div className="flex justify-center py-16">
+              <div className="w-7 h-7 border-[3px] border-brand-grey border-t-brand-blue rounded-full animate-spin" />
+            </div>
+          )}
+          {loading && (
+            <div className="flex justify-center py-16">
+              <div className="w-7 h-7 border-[3px] border-brand-grey border-t-brand-blue rounded-full animate-spin" />
+            </div>
+          )}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {postsWithSlug.map((post, i) =>
+            {posts.map((post, i) =>
             <GlassCard key={i} delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col">
                 <div className="relative h-40 overflow-hidden">
                   <img
@@ -68,7 +83,7 @@ export default function Blog() {
                     <span className={`inline-block px-2.5 py-1 rounded-full bg-white/70 text-[10px] font-bold uppercase tracking-wider ${post.accent}`}>
                       {post.tag}
                     </span>
-                    <span className="text-[10px] text-navy/40 font-medium">{post.readTime} de leitura</span>
+                    <span className="text-[10px] text-navy/40 font-medium">{post.read_time} de leitura</span>
                   </div>
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 flex items-center justify-center">

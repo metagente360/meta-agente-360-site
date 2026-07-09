@@ -24,6 +24,9 @@ import Blog from './pages/Blog';
 import Artigo from './pages/Artigo';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
+import AdminLogin from './pages/AdminLogin';
+import AdminBlog from './pages/AdminBlog';
+import AdminGuard from './components/AdminGuard';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -76,7 +79,11 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
-          <AuthenticatedApp />
+          <Routes>
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/blog" element={<AdminGuard><AdminBlog /></AdminGuard>} />
+            <Route path="*" element={<AuthenticatedApp />} />
+          </Routes>
         </Router>
         <Toaster />
       </QueryClientProvider>

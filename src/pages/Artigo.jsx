@@ -1,13 +1,39 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, PenLine } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import blogPosts from '../data/blogPosts';
 import CTASection from '../components/ui/CTASection';
+import { base44 } from '@/api/base44Client';
 
 export default function Artigo() {
   const { slug } = useParams();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const [post, setPost] = useState(null);
+  const [related, setRelated] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      setLoading(true);
+      const results = await base44.entities.BlogPost.filter({ slug, status: 'published' });
+      const found = results[0] || null;
+      setPost(found);
+      if (found) {
+        const all = await base44.entities.BlogPost.filter({ status: 'published' }, '-created_date', 10);
+        setRelated(all.filter(p => p.slug !== slug).slice(0, 2));
+      }
+      setLoading(false);
+    }
+    load();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-brand-ice pt-16">
+        <div className="w-7 h-7 border-[3px] border-brand-grey border-t-brand-blue rounded-full animate-spin" />
+      </main>
+    );
+  }
 
   if (!post) {
     return (
@@ -63,7 +89,7 @@ export default function Artigo() {
               </div>
               <div className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5" />
-                <span>{post.readTime} de leitura</span>
+                <span>{post.read_time} de leitura</span>
               </div>
             </div>
 
@@ -83,10 +109,7 @@ export default function Artigo() {
               Conteúdos que complementam sua leitura
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
-              {blogPosts
-                .filter((p) => p.slug !== slug)
-                .slice(0, 2)
-                .map((p, i) => (
+              {related.map((p, i) => (
                   <Link
                     key={i}
                     to={`/blog/${p.slug}`}
@@ -103,7 +126,7 @@ export default function Artigo() {
                         <h3 className="font-heading text-sm font-semibold text-navy leading-snug group-hover:text-brand-blue transition-colors">
                           {p.title}
                         </h3>
-                        <p className="text-[11px] text-navy/40 mt-1">{p.readTime} de leitura</p>
+                        <p className="text-[11px] text-navy/40 mt-1">{p.read_time} de leitura</p>
                       </div>
                     </div>
                   </Link>
