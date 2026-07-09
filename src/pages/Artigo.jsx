@@ -93,8 +93,26 @@ export default function Artigo() {
               </div>
             </div>
 
-            <div className="prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-navy prose-headings:font-semibold prose-p:text-navy/70 prose-p:leading-[1.8] prose-p:text-[1.0625rem] prose-li:text-navy/70 prose-strong:text-navy">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+            <div className="max-w-none">
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => <h1 className="font-heading text-2xl font-bold text-navy mt-8 mb-4 leading-tight">{children}</h1>,
+                  h2: ({ children }) => <h2 className="font-heading text-xl font-semibold text-navy mt-8 mb-4 leading-snug border-b border-navy/8 pb-2">{children}</h2>,
+                  h3: ({ children }) => <h3 className="font-heading text-base font-semibold text-navy mt-6 mb-3">{children}</h3>,
+                  p: ({ children }) => <p className="text-navy/70 text-[1.0625rem] leading-[1.8] mb-4">{children}</p>,
+                  strong: ({ children }) => <strong className="font-semibold text-navy">{children}</strong>,
+                  em: ({ children }) => <em className="italic text-navy/70">{children}</em>,
+                  ul: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-1">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-1">{children}</ol>,
+                  li: ({ children }) => <li className="text-navy/70 text-[1.0625rem] leading-relaxed">{children}</li>,
+                  a: ({ href, children }) => <a href={href} className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">{children}</a>,
+                  hr: () => <hr className="border-navy/12 my-8" />,
+                  blockquote: ({ children }) => <blockquote className="border-l-4 border-brand-blue pl-5 my-6 text-navy/60 italic">{children}</blockquote>,
+                  code: ({ children, inline }) => inline
+                    ? <code className="text-brand-purple bg-brand-lavender px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>
+                    : <pre className="bg-navy/6 rounded-xl p-4 overflow-auto mb-4"><code className="text-navy text-sm font-mono">{children}</code></pre>,
+                }}
+              >{post.content}</ReactMarkdown>
             </div>
           </motion.div>
         </article>

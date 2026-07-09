@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Plus, Edit2, Trash2, Eye, EyeOff, ArrowLeft, Upload, X, Save, FileText } from 'lucide-react';
+import { Plus, Edit2, Trash2, Eye, EyeOff, ArrowLeft, Upload, X, Save, FileText, ExternalLink } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import ContentEditor from '@/components/admin/ContentEditor';
 
@@ -361,12 +361,20 @@ export default function AdminBlog() {
             <h1 className="font-heading text-xl font-semibold text-navy">Administração do Blog</h1>
             <p className="text-xs text-navy/50 mt-0.5">{posts.filter(p => p.status === 'published').length} publicados · {posts.filter(p => p.status === 'draft').length} rascunhos</p>
           </div>
-          <button
-            onClick={openNew}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5 transition-all"
-          >
-            <Plus className="w-4 h-4" /> Novo Artigo
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy/60 bg-navy/6 hover:bg-navy/10 transition-all"
+            >
+              <ExternalLink className="w-4 h-4" /> Ver site
+            </a>
+            <button
+              onClick={openNew}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5 transition-all"
+            >
+              <Plus className="w-4 h-4" /> Novo Artigo
+            </button>
+          </div>
         </div>
       </div>
 
