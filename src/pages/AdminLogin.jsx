@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Lock } from 'lucide-react';
 
-const ADMIN_USER = 'metadim';
+const ADMIN_USER = 'metadmin';
 const ADMIN_PASS = '1234';
 
 export default function AdminLogin() {
@@ -49,7 +49,7 @@ export default function AdminLogin() {
               value={form.user}
               onChange={e => setForm(f => ({ ...f, user: e.target.value }))}
               placeholder="Digite seu usuário"
-              className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/12 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-sm"
+              className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-sm [color-scheme:dark]"
               required
             />
           </div>
@@ -61,7 +61,7 @@ export default function AdminLogin() {
                 value={form.pass}
                 onChange={e => setForm(f => ({ ...f, pass: e.target.value }))}
                 placeholder="Digite sua senha"
-                className="w-full px-4 py-3 pr-11 rounded-xl bg-white/8 border border-white/12 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-sm"
+                className="w-full px-4 py-3 pr-11 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-brand-blue/50 text-sm [color-scheme:dark]"
                 required
               />
               <button
