@@ -69,7 +69,8 @@ export default function Blog() {
           )}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) =>
-            <GlassCard key={i} delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col">
+            <Link key={i} to={`/blog/${post.slug}`} className="block">
+            <GlassCard delay={i * 0.08} className="p-0 overflow-hidden relative flex flex-col h-full">
                 <div className="relative h-40 overflow-hidden">
                   <img
                   src={post.image}
@@ -100,6 +101,7 @@ export default function Blog() {
                   </div>
                 </div>
               </GlassCard>
+            </Link>
             )}
           </div>
         </div>

@@ -363,10 +363,10 @@ export default function AdminBlog() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="/"
+              href="/blog"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy/60 bg-navy/6 hover:bg-navy/10 transition-all"
             >
-              <ExternalLink className="w-4 h-4" /> Ver site
+              <ExternalLink className="w-4 h-4" /> Ver blog
             </a>
             <button
               onClick={openNew}
