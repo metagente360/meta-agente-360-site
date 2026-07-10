@@ -30,7 +30,7 @@ const emptyForm = {
   status: 'draft',
 };
 
-export default function AdminBlog() {
+export default function AdminBlog({ embedded = false }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState('list'); // 'list' | 'edit'
@@ -353,8 +353,9 @@ export default function AdminBlog() {
 
   // LIST VIEW
   return (
-    <div className="min-h-screen bg-brand-ice">
-      {/* Header */}
+    <div className={embedded ? '' : 'min-h-screen bg-brand-ice'}>
+      {/* Header — only when standalone */}
+      {!embedded && (
       <div className="bg-white border-b border-navy/8 px-4 sm:px-6 lg:px-8 py-5">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div>
@@ -362,23 +363,29 @@ export default function AdminBlog() {
             <p className="text-xs text-navy/50 mt-0.5">{posts.filter(p => p.status === 'published').length} publicados · {posts.filter(p => p.status === 'draft').length} rascunhos</p>
           </div>
           <div className="flex items-center gap-3">
-            <a
-              href="/blog"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy/60 bg-navy/6 hover:bg-navy/10 transition-all"
-            >
+            <a href="/blog" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy/60 bg-navy/6 hover:bg-navy/10 transition-all">
               <ExternalLink className="w-4 h-4" /> Ver blog
             </a>
-            <button
-              onClick={openNew}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5 transition-all"
-            >
+            <button onClick={openNew} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5 transition-all">
               <Plus className="w-4 h-4" /> Novo Artigo
             </button>
           </div>
         </div>
       </div>
+      )}
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {embedded && (
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h1 className="font-heading text-xl font-semibold text-navy">Artigos do Blog</h1>
+              <p className="text-xs text-navy/50 mt-0.5">{posts.filter(p => p.status === 'published').length} publicados · {posts.filter(p => p.status === 'draft').length} rascunhos</p>
+            </div>
+            <button onClick={openNew} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg hover:shadow-brand-blue/25 hover:-translate-y-0.5 transition-all">
+              <Plus className="w-4 h-4" /> Novo Artigo
+            </button>
+          </div>
+        )}
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="w-7 h-7 border-[3px] border-brand-grey border-t-brand-blue rounded-full animate-spin" />

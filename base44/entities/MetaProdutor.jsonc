@@ -1,0 +1,46 @@
+{
+  "name": "MetaProdutor",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome completo do Meta Produtor"
+    },
+    "especialidade": {
+      "type": "string",
+      "description": "\u00c1rea de especialidade ou cargo"
+    },
+    "foto": {
+      "type": "string",
+      "description": "URL da foto de perfil"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Breve descri\u00e7\u00e3o do Meta Produtor"
+    },
+    "linkedin": {
+      "type": "string",
+      "description": "URL do perfil no LinkedIn"
+    },
+    "instagram": {
+      "type": "string",
+      "description": "URL do perfil no Instagram"
+    },
+    "nicho": {
+      "type": "string",
+      "description": "Nicho de atua\u00e7\u00e3o principal"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo"
+      ],
+      "default": "ativo"
+    }
+  },
+  "required": [
+    "nome",
+    "especialidade"
+  ]
+}

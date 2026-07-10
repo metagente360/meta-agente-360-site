@@ -26,6 +26,7 @@ import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 import AdminLogin from './pages/AdminLogin';
 import AdminBlog from './pages/AdminBlog';
+import AdminDashboard from './pages/AdminDashboard';
 import AdminGuard from './components/AdminGuard';
 
 const AuthenticatedApp = () => {
@@ -81,7 +82,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/admin" element={<AdminLogin />} />
-            <Route path="/admin/blog" element={<AdminGuard><AdminBlog /></AdminGuard>} />
+            <Route path="/admin/blog" element={<AdminGuard><AdminDashboard /></AdminGuard>} />
             <Route path="*" element={<AuthenticatedApp />} />
           </Routes>
         </Router>
