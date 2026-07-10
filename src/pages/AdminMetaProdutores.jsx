@@ -5,7 +5,7 @@ import { base44 } from '@/api/base44Client';
 
 const emptyForm = {
   nome: '', especialidade: '', foto: '', bio: '',
-  linkedin: '', instagram: '', nicho: '', status: 'ativo',
+  whatsapp: '', linkedin: '', instagram: '', nicho: '', status: 'ativo',
 };
 
 export default function AdminMetaProdutores() {
@@ -29,8 +29,8 @@ export default function AdminMetaProdutores() {
   function openNew() { setForm(emptyForm); setEditingId(null); setView('edit'); }
   function openEdit(item) {
     setForm({ nome: item.nome || '', especialidade: item.especialidade || '', foto: item.foto || '',
-      bio: item.bio || '', linkedin: item.linkedin || '', instagram: item.instagram || '',
-      nicho: item.nicho || '', status: item.status || 'ativo' });
+      bio: item.bio || '', whatsapp: item.whatsapp || '', linkedin: item.linkedin || '',
+      instagram: item.instagram || '', nicho: item.nicho || '', status: item.status || 'ativo' });
     setEditingId(item.id); setView('edit');
   }
 
@@ -115,6 +115,7 @@ export default function AdminMetaProdutores() {
             className="w-full px-3 py-2.5 rounded-xl border border-navy/12 text-sm text-navy placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 resize-none" />
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
+          {field('WhatsApp', 'whatsapp', 'ex: 5511999990001')}
           {field('LinkedIn', 'linkedin', 'https://linkedin.com/in/...')}
           {field('Instagram', 'instagram', 'https://instagram.com/...')}
         </div>

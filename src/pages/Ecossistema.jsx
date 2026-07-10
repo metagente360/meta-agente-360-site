@@ -1,60 +1,11 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Users, BookOpen, Zap, Globe, MessageCircle, ExternalLink } from 'lucide-react';
 import GlassCard from '../components/ui/GlassCard';
 import GradientButton from '../components/ui/GradientButton';
 import SectionHeader from '../components/ui/SectionHeader';
 import EcossistemaIllustration from '../components/ecossistema/EcossistemaIllustration';
-
-const producers = [
-  {
-    name: 'Ana Claudia Ferreira',
-    specialty: 'Saúde & Bem-estar',
-    niche: 'Clínicas, consultórios e terapeutas',
-    bio: 'Psicóloga clínica com 12 anos de experiência. Criou agentes para triagem emocional, acompanhamento terapêutico e gestão de clínicas de saúde mental.',
-    photo: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990001',
-  },
-  {
-    name: 'Ricardo Lemos',
-    specialty: 'Educação & Treinamento',
-    niche: 'Cursos online, escolas e corporativo',
-    bio: 'Especialista em EAD e designer instrucional. Desenvolve agentes tutores, sistemas de avaliação adaptativa e onboarding corporativo inteligente.',
-    photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990002',
-  },
-  {
-    name: 'Dra. Patrícia Nunes',
-    specialty: 'Jurídico',
-    niche: 'Escritórios de advocacia e compliance',
-    bio: 'Advogada especialista em contratos e compliance. Constrói agentes para triagem de casos, organização de prazos processuais e atendimento jurídico inicial.',
-    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990003',
-  },
-  {
-    name: 'Carlos Medeiros',
-    specialty: 'Financeiro & Contabilidade',
-    niche: 'Contadores, CFOs e fintechs',
-    bio: 'Contador e consultor financeiro. Cria agentes para conciliação bancária, geração de relatórios e atendimento automatizado de clientes contábeis.',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990004',
-  },
-  {
-    name: 'Juliana Castelo',
-    specialty: 'Marketing & Agências',
-    niche: 'Agências digitais e consultorias',
-    bio: 'Head de Marketing com passagem por grandes agências. Especializada em agentes de copywriting, briefing automatizado e relatórios de performance.',
-    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990005',
-  },
-  {
-    name: 'Thiago Barbosa',
-    specialty: 'Vendas & CRM',
-    niche: 'Times comerciais e startups',
-    bio: 'Profissional de vendas B2B com foco em automação comercial. Cria agentes SDR, qualificadores de leads e sistemas de follow-up inteligente.',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face',
-    whatsapp: '5511999990006',
-  },
-];
+import { base44 } from '@/api/base44Client';
 
 const community = [
   { icon: Users, label: 'Comunidade ativa', desc: 'Produtores, especialistas e criadores trocando experiências e construindo soluções juntos.' },
@@ -65,6 +16,13 @@ const community = [
 
 
 export default function Ecossistema() {
+  const [producers, setProducers] = useState([]);
+
+  useEffect(() => {
+    base44.entities.MetaProdutor.filter({ status: 'ativo' }, '-created_date', 50)
+      .then(data => setProducers(data));
+  }, []);
+
   return (
     <main>
       {/* HERO */}
@@ -114,25 +72,20 @@ export default function Ecossistema() {
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {producers.map((p, i) => (
-              <GlassCard key={i} delay={i * 0.08} className="p-6 flex flex-col">
+              <GlassCard key={p.id || i} delay={i * 0.08} className="p-6 flex flex-col">
                 {/* Header com foto */}
                 <div className="flex items-start gap-4 mb-4">
-                  <img
-                    src={p.photo}
-                    alt={p.name}
-                    className="w-14 h-14 rounded-2xl object-cover flex-shrink-0 border-2 border-brand-grey"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex-shrink-0 items-center justify-center hidden">
-                    <span className="text-lg font-bold text-brand-purple">{p.name.charAt(0)}</span>
-                  </div>
+                  {p.foto ? (
+                    <img src={p.foto} alt={p.nome} className="w-14 h-14 rounded-2xl object-cover flex-shrink-0 border-2 border-brand-grey" />
+                  ) : (
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue/15 to-brand-purple/15 flex-shrink-0 flex items-center justify-center">
+                      <span className="text-lg font-bold text-brand-purple">{p.nome?.charAt(0)}</span>
+                    </div>
+                  )}
                   <div className="min-w-0">
-                    <p className="font-heading text-sm font-semibold text-navy leading-tight">{p.name}</p>
-                    <p className="text-xs font-bold text-brand-blue mt-0.5">{p.specialty}</p>
-                    <p className="text-[10px] text-navy/45 mt-0.5">{p.niche}</p>
+                    <p className="font-heading text-sm font-semibold text-navy leading-tight">{p.nome}</p>
+                    <p className="text-xs font-bold text-brand-blue mt-0.5">{p.especialidade}</p>
+                    <p className="text-[10px] text-navy/45 mt-0.5">{p.nicho}</p>
                   </div>
                 </div>
 
@@ -140,16 +93,18 @@ export default function Ecossistema() {
                 <p className="text-xs text-navy/60 leading-relaxed flex-1 mb-5">{p.bio}</p>
 
                 {/* CTA WhatsApp */}
-                <a
-                  href={`https://wa.me/${p.whatsapp}?text=Olá+${encodeURIComponent(p.name)}!+Vi+seu+perfil+no+ecossistema+Meta+Agente+360+e+gostaria+de+conversar.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-xs font-semibold transition-colors"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  Falar com {p.name.split(' ')[0]}
-                  <ExternalLink className="w-3 h-3 opacity-60" />
-                </a>
+                {p.whatsapp && (
+                  <a
+                    href={`https://wa.me/${p.whatsapp}?text=Olá+${encodeURIComponent(p.nome)}!+Vi+seu+perfil+no+ecossistema+Meta+Agente+360+e+gostaria+de+conversar.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-xs font-semibold transition-colors"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    Falar com {p.nome?.split(' ')[0]}
+                    <ExternalLink className="w-3 h-3 opacity-60" />
+                  </a>
+                )}
               </GlassCard>
             ))}
           </div>
